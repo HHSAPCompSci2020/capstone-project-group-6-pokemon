@@ -1,11 +1,12 @@
-import java.awt.Color;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
-public class EndPanel extends JFrame{
+public class EndPanel extends JFrame implements ActionListener {
+	Main w;
 	// JFrame
 	static JFrame f;
 
@@ -15,38 +16,29 @@ public class EndPanel extends JFrame{
 	// label to display text
 	static JLabel l;
 
-	public static void mainMenu() {
-		// create a new frame to store text field and button
-		f = new JFrame("panel");
-
-		// create a label to display text
-		l = new JLabel("Main Menu");
-
-		// create a new buttons
-		b1 = new JButton("Fight Again");
-		b2 = new JButton("Restart");
-		b3 = new JButton("Exit");
-
-		// create a panel to add buttons
+	public EndPanel(Main w) {
+		this.w = w;
 		JPanel p = new JPanel();
 
-      //  p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
+		p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
+		p.add(Box.createVerticalStrut(300));
 
-		// add buttons and textfield to panel
-        p.add(l);
+		// create a new buttons
+		b1 = new JButton("Restart");
+		b2 = new JButton("Exit");
+		b3 = new JButton("Fight Again");
+
+		b1.addActionListener(this);
+		b2.addActionListener(this);
+		b3.addActionListener(this);
+
 		p.add(b1);
 		p.add(b2);
 		p.add(b3);
+		add(p);
+	}
 
-		// setbackground of panel
-		p.setBackground(Color.white);
-
-		// add panel to frame
-		f.add(p);
-
-		// set the size of frame
-		f.setSize(800, 600);
-
-		f.show();
+	public void actionPerformed(ActionEvent e) {
+		w.changePanel("1");
 	}
 }
