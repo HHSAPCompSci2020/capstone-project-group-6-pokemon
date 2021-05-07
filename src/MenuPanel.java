@@ -14,9 +14,12 @@ public class MenuPanel extends JPanel implements ActionListener {
 		p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
 		p.add(Box.createVerticalStrut(300));
 
-		JButton button = new JButton("Play the Game!");
-		button.addActionListener(this);
-		p.add(button);
+		JButton button1 = new JButton("Start");
+		JButton button2 = new JButton("Instructions");
+		button1.addActionListener(this);
+		button2.addActionListener(this);
+		p.add(button1);
+		p.add(button2);
 		add(p);
 	}
 
