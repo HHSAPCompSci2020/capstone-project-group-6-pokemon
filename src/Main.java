@@ -3,7 +3,11 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-
+/**
+ * 
+ * @author Kelsey Shan
+ *
+ */
 public class Main extends JFrame {
 	
 	JPanel cardPanel;
@@ -18,13 +22,16 @@ public class Main extends JFrame {
 		cardPanel.setLayout(cl);
 
 		MenuPanel panel1 = new MenuPanel(this);
-		EndPanel panel2 = new EndPanel(this);
+		InstructionsPanel panel2 = new InstructionsPanel(this);
+		SelectPanel panel3 = new SelectPanel(this);
 
 		cardPanel.add(panel1, "1"); // Card is named "1"
 		cardPanel.add(panel2, "2"); // Card is named "2"
+		cardPanel.add(panel3, "3"); // Card is named "2"
+
 
 		add(cardPanel);
-		addKeyListener(panel2);
+		addKeyListener(panel3);
 
 		setVisible(true);
 	}

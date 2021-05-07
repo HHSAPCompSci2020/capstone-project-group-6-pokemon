@@ -5,17 +5,21 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.geom.AffineTransform;
-
-public class EndPanel extends JPanel implements KeyListener {
+/**
+ * 
+ * @author Kelsey Shan
+ *
+ */
+public class SelectPanel extends JPanel implements KeyListener {
 
 	private String message;
 	private Main m;
 
-	public EndPanel(Main m) {
+	public SelectPanel(Main m) {
 		super();
 		this.m = m;
 		setBackground(Color.WHITE);
-		message = "This is the game screen! Press escape to quit.";
+		message = "Choose Your Team";
 	}
 
 	public void paintComponent(Graphics g) {
