@@ -119,10 +119,3 @@ Credits:
    * Controller Support library
       * https://github.com/williamahartman/Jamepad
 
-
-
-
-[a]you've prob heard this before but isn't this a bit too similar to the actual version? i'd rename it at the least...
-[b]elaborate. how do you increase hp? how do you attack? what body-part is moving (if any)? what does it look like?
-[c]What does this look like in terms of your game? Will the pokemon be simple characters or will the whole game have simple animations? Overall, the features list says to fully describe each feature and there are only a few basic details for each description.
-[d]I know you guys have barely started on the project, but just so that you have a base, you should try coming up with a breakdown of the code.
