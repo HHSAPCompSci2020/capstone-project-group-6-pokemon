@@ -4,41 +4,60 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.geom.AffineTransform;
 
-public class EndPanel extends JFrame implements ActionListener {
-	Main w;
-	// JFrame
-	static JFrame f;
+public class EndPanel extends JPanel implements KeyListener {
 
-	// JButton
-	static JButton b1, b2, b3;
+	private String message;
+	private Main m;
 
-	// label to display text
-	static JLabel l;
-
-	public EndPanel(Main w) {
-		this.w = w;
-		JPanel p = new JPanel();
-
-		p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
-		p.add(Box.createVerticalStrut(300));
-
-		// create a new buttons
-		b1 = new JButton("Restart");
-		b2 = new JButton("Exit");
-		b3 = new JButton("Fight Again");
-
-		b1.addActionListener(this);
-		b2.addActionListener(this);
-		b3.addActionListener(this);
-
-		p.add(b1);
-		p.add(b2);
-		p.add(b3);
-		add(p);
+	public EndPanel(Main m) {
+		super();
+		this.m = m;
+		setBackground(Color.WHITE);
+		message = "This is the game screen! Press escape to quit.";
 	}
 
-	public void actionPerformed(ActionEvent e) {
-		w.changePanel("1");
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g); // Call JPanel's paintComponent method to paint the background
+
+		Graphics2D g2 = (Graphics2D) g;
+
+		int width = getWidth();
+		int height = getHeight();
+
+		double ratioX = (double) width / 800.0;
+		double ratioY = (double) height / 600.0;
+
+		AffineTransform at = g2.getTransform();
+		g2.scale(ratioX, ratioY);
+
+		g.setColor(Color.BLACK);
+		g.setFont(new Font("SansSerif", Font.BOLD, 28));
+		int strWidth = g.getFontMetrics().stringWidth(message);
+		g.drawString(message, 400 - strWidth / 2, 300);
+
+		g2.setTransform(at);
+
+		// TODO Add any custom drawings here
+	}
+
+	@Override
+	public void keyPressed(KeyEvent arg0) {
+		if (arg0.getKeyCode() == KeyEvent.VK_ESCAPE) {
+			m.changePanel("1");
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void keyTyped(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+
 	}
 }
