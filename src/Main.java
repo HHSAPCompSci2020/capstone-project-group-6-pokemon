@@ -1,8 +1,11 @@
 import java.awt.*;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+
 public class Main extends JFrame {
+	
 	JPanel cardPanel;
 
 	public Main(String title) {
@@ -34,4 +37,5 @@ public class Main extends JFrame {
 	public static void main(String[] args) {
 		Main w = new Main("Pokemon Fighting");
 	}
+	
 }
