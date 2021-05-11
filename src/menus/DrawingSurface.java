@@ -1,3 +1,4 @@
+package menus;
 
 /**
  * Author: Kelsey Shan
@@ -5,6 +6,7 @@
 import java.awt.Point;
 import java.util.ArrayList;
 
+import game.GameScreen;
 import processing.core.PApplet;
 
 public class DrawingSurface extends PApplet implements ScreenSwitcher {
@@ -28,11 +30,14 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 		MenuScreen screen1 = new MenuScreen(this);
 		screens.add(screen1);
 		
-		GameScreen screen2 = new GameScreen(this);
+		SelectScreen screen2 = new SelectScreen(this);
 		screens.add(screen2);
 		
 		RuleScreen screen3 = new RuleScreen(this);
 		screens.add(screen3);
+		
+		GameScreen screen4 = new GameScreen(this);
+		screens.add(screen4);
 		
 		activeScreen = screens.get(0);
 		

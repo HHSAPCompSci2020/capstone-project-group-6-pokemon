@@ -1,3 +1,4 @@
+package menus;
 
 /**
  * Author: Kelsey Shan
@@ -6,7 +7,7 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.*;
 
-public class GameScreen extends Screen {
+public class SelectScreen extends Screen {
 
 	private int x, y;
 
@@ -15,7 +16,7 @@ public class GameScreen extends Screen {
 	private Rectangle[] options = new Rectangle[10];
 	private Rectangle done;
 
-	public GameScreen(DrawingSurface surface) {
+	public SelectScreen(DrawingSurface surface) {
 		super(800, 600);
 		this.surface = surface;
 		// PIKACHU
@@ -82,6 +83,8 @@ public class GameScreen extends Screen {
 
 	public void mousePressed() {
 		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX, surface.mouseY));
+		if (done.contains(p)) // got to gamescreen
+			surface.switchScreen(ScreenSwitcher.SCREEN4);
 		/*
 		if (button.contains(p)) // got to play
 			surface.switchScreen(ScreenSwitcher.SCREEN2);
