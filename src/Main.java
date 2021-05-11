@@ -3,18 +3,43 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import processing.awt.PSurfaceAWT;
+import processing.core.PApplet;
+
 /**
  * 
  * @author Kelsey Shan
  *
  */
-public class Main extends JFrame {
-	
+public class Main {
+
+	public static void main(String args[]) {
+
+		DrawingSurface drawing = new DrawingSurface();
+		PApplet.runSketch(new String[]{""}, drawing);
+		PSurfaceAWT surf = (PSurfaceAWT) drawing.getSurface();
+		PSurfaceAWT.SmoothCanvas canvas = (PSurfaceAWT.SmoothCanvas) surf.getNative();
+		JFrame window = (JFrame)canvas.getFrame();
+
+		window.setSize(800, 600);
+		window.setMinimumSize(new Dimension(100,100));
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.setResizable(true);
+
+		window.setVisible(true);
+		
+		
+		canvas.requestFocus();
+	}
+
+}
+
+	/*
 	JPanel cardPanel;
 
 	public Main(String title) {
 		super(title);
-		setBounds(100, 100, 800, 600);
+		setBounds(100, 100, 400, 300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		cardPanel = new JPanel();
@@ -31,18 +56,30 @@ public class Main extends JFrame {
 
 
 		add(cardPanel);
-		addKeyListener(panel3);
+		//addKeyListener(panel3);
 
 		setVisible(true);
 	}
 
+	/**
+	 * This method switches between the different screens
+	 * @param name the name of the next panel card
+	 **/
+	/*
 	public void changePanel(String name) {
 		((CardLayout) cardPanel.getLayout()).show(cardPanel, name);
 		requestFocus();
 	}
 
+	/**
+	 * This is the main method
+	 * @param args
+	 */
+	/*
 	public static void main(String[] args) {
 		Main w = new Main("Pokemon Fighting");
 	}
 	
-}
+	*/
+	
+
