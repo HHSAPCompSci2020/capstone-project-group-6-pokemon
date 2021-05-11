@@ -3,7 +3,7 @@ package game;
 import pokemon.*;
 
 public class Game {
-	Player [] players = new Player[2]
+	Player [] players = new Player[2];
 	int turn; // 0 for player1, 1 for player2
 
 	public Game() {
