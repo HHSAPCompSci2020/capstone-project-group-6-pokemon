@@ -1,4 +1,6 @@
-package game;
+/**
+ * Author: Kelsey Shan
+ */
 
 import java.util.ArrayList;
 
@@ -12,7 +14,8 @@ public class Player {
 		team = new ArrayList<Pokemon>();
 		current = new Pokemon();
 	}
-
+	
+	
 	/**
 	 * This method adds a new pokemon to the team of the player.
 	 * 
