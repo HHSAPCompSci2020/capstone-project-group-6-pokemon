@@ -31,4 +31,8 @@ public class Player {
 	public void switchPokemon(int i) {
 		current = team.get(i);
 	}
+
+	public void move(int i) {
+		
+	}
 }
