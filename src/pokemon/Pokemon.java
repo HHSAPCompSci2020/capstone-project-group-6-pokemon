@@ -4,9 +4,12 @@ public class Pokemon {
 	int health, level;
 	boolean isAlive;
 	
+	int maxHealth; 
+	
+	int speedBase; 
 	
 	
-	char type; // a = air, f = fire, e = earth, w = water;
+	char type; // a = air, f = fire, e = earth, w = water, g = grass;
 	
 	int aStatN;  // attack stat numerator 
 	
@@ -34,10 +37,11 @@ public class Pokemon {
 		
 	}
 	
-	public Pokemon (char type, int health, int level) {
+	public Pokemon (char type, int maxHealth, int level) {
 		this.type = type; 
-		this.health = health; 
+		this.health = maxHealth; 
 		this.level = level; 
+		this.maxHealth = maxHealth;
 		
 		aStatN = 2;
 		aStatM = aStatN/2;
