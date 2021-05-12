@@ -12,14 +12,19 @@ public class Game {
 		turn = 0;
 	}
 
+	public void setP1(Pokemon p) {
+		p1 = p;
+	}
+
+	public void setP2(Pokemon p) {
+		p2 = p;
+	}
+
 	public void act() {
 		if (win() == 0) {
 			if (turn == 0) {
-				p1.
 			} else {
-
 			}
-
 			changeTurn();
 		}
 	}
