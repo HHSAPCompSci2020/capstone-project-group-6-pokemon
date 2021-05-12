@@ -17,7 +17,7 @@ public class Bulbasaur extends Pokemon {
 	}
 	
 	public int vineWhip () {
-		return (int)(40*aStatM); 
+		return (int)(40*getAStat()); 
 	}  
 	
 	public int protect () {
@@ -26,7 +26,7 @@ public class Bulbasaur extends Pokemon {
 	} 
 	
 	public int growth () {
-		aStatN +=2; 
+		changeAstat(2); 
 		return 0; 
 	}
 	

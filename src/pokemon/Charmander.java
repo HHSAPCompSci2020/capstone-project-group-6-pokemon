@@ -11,7 +11,7 @@ public class Charmander extends Pokemon{
 	}
 	
 	public int ember () {
-		return (int)(40*aStatM); 
+		return (int)(40*getAStat()); 
 	}  
 	
 	public int protect () {
@@ -20,8 +20,8 @@ public class Charmander extends Pokemon{
 	} 
 	
 	public int blaze () {
-		aStatN ++; 
-		sStatN ++; 
+		changeAstat(1);
+		changeSstat(1);
 		return 0; 
 	}
 }

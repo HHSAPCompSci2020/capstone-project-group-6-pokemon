@@ -11,7 +11,7 @@ public class Pikachu extends Pokemon{
 	}
 	
 	public int nuzzle () {
-		return (int)(60*aStatM); 
+		return (int)(60*getAStat()); 
 	}  
 	
 	public int protect () {
@@ -20,7 +20,7 @@ public class Pikachu extends Pokemon{
 	} 
 	
 	public int agility () {
-		sStatN +=2; 
+		changeSstat(2); 
 		return 0; 
 	}
 }
