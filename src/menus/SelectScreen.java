@@ -7,6 +7,8 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.*;
 
+import pokemon.*;
+
 public class SelectScreen extends Screen {
 
 	private int x, y;
@@ -88,8 +90,33 @@ public class SelectScreen extends Screen {
 
 	public void mousePressed() {
 		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX, surface.mouseY));
-		if (done.contains(p)) // got to gamescreen
+		if (done.contains(p)) { // got to gamescreen
 			surface.switchScreen(ScreenSwitcher.SCREEN4);
+			Pokemon a, b;
+			if (choice1 == 0) {
+				a = new Pikachu();
+			} else if (choice1 == 1) {
+				a = new JigglyPuff();
+			} else if (choice1 == 2) {
+				a = new Bulbasaur();
+			} else if (choice1 == 3) {
+				a = new Charmander();
+			} else if (choice1 == 4) {
+				a = new Squirtle();
+			}
+			
+			if (choice2 == 0) {
+				b = new Pikachu();
+			} else if (choice2 == 1) {
+				b = new JigglyPuff();
+			} else if (choice2 == 2) {
+				b = new Bulbasaur();
+			} else if (choice2 == 3) {
+				b = new Charmander();
+			} else if (choice2 == 4) {
+				b = new Squirtle();
+			}
+		}
 		for (int i = 0; i < options.length; i++) {
 			if (options[i].contains(p)) {
 				if (i % 2 == 0)
@@ -98,13 +125,5 @@ public class SelectScreen extends Screen {
 					choice2 = i;
 			}
 		}
-	}
-
-	public int getChoice1() {
-		return choice1;
-	}
-
-	public int getChoice2() {
-		return choice2;
 	}
 }
