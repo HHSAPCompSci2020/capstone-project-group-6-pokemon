@@ -13,7 +13,7 @@ public class Bulbasaur extends Pokemon {
 	
 	public Bulbasaur(int health, int level) {
 		super('g', health, level);
-		speedBase = 40;
+		setSpeedBase(40);
 	}
 	
 	public int vineWhip () {
@@ -21,7 +21,7 @@ public class Bulbasaur extends Pokemon {
 	}  
 	
 	public int protect () {
-		isProtected = true; 
+		setProtected(true); 
 		return 0; 
 	} 
 	

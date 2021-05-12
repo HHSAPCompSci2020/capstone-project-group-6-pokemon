@@ -7,7 +7,7 @@ public class Pikachu extends Pokemon{
 	
 	public Pikachu(int health, int level) {
 		super('e', health, level);
-		speedBase = 60;
+		setSpeedBase(60);
 	}
 	
 	public int nuzzle () {
@@ -15,7 +15,7 @@ public class Pikachu extends Pokemon{
 	}  
 	
 	public int protect () {
-		isProtected = true; 
+		setProtected(true); 
 		return 0; 
 	} 
 	
