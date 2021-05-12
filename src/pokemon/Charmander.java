@@ -7,7 +7,7 @@ public class Charmander extends Pokemon{
 	
 	public Charmander(int health, int level) {
 		super('f', health, level);
-		speedBase = 30;
+		setSpeedBase(30);
 	}
 	
 	public int ember () {
@@ -15,7 +15,7 @@ public class Charmander extends Pokemon{
 	}  
 	
 	public int protect () {
-		isProtected = true; 
+		setProtected(true); 
 		return 0; 
 	} 
 	
