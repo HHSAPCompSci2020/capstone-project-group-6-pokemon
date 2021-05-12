@@ -15,7 +15,8 @@ public class SelectScreen extends Screen {
 
 	private Rectangle[] options = new Rectangle[10];
 	private Rectangle done;
-	int choice1 = -1, choice2 = -1;
+	private int choice1 = -1, choice2 = -1;
+
 	public SelectScreen(DrawingSurface surface) {
 		super(800, 600);
 		this.surface = surface;
@@ -53,8 +54,7 @@ public class SelectScreen extends Screen {
 		for (int i = 0; i < options.length; i++) {
 			if (choice1 == i || choice2 == i) {
 				surface.fill(100);
-			}
-			else
+			} else
 				surface.noFill();
 			surface.rect(options[i].x, options[i].y, options[i].width, options[i].height, 10, 10, 10, 10);
 		}
@@ -92,7 +92,7 @@ public class SelectScreen extends Screen {
 			surface.switchScreen(ScreenSwitcher.SCREEN4);
 		for (int i = 0; i < options.length; i++) {
 			if (options[i].contains(p)) {
-				if (i%2 == 0)
+				if (i % 2 == 0)
 					choice1 = i;
 				else
 					choice2 = i;
