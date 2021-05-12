@@ -50,6 +50,11 @@ public class BattleScreen extends Screen{
 			surface.rect(actions[i].x, actions[i].y, actions[i].width, actions[i].height, 10, 10, 10, 10);
 		}
 		
+		for(int i = 0; i<statTag.length; i++)
+		{
+			surface.rect(statTag[i].x, statTag[i].y, statTag[i].width, statTag[i].height, 10, 10, 10, 10);
+		}
+		
 		surface.popStyle();
 	}
 	
