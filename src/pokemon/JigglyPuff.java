@@ -7,25 +7,25 @@ public class JigglyPuff extends Pokemon{
 	
 	public JigglyPuff(int health, int level) {
 		super('n', health, level);
-		speedBase = 10;
+		setSpeedBase(10);
 	}
 	
 	public int rollout () {
-		return (int)(50*aStatM); 
+		return (int)(50*getAStat()); 
 	}  
 	
 	public int protect () {
-		isProtected = true; 
+		setProtected(true); 
 		return 0; 
 	} 
 	
 	public int recover () {
-		if (maxHealth/2 >= health) {
-			health+= maxHealth/2;
+		if (getMaxHealth()/2 >= getHealth()) {
+			this.addHealth(this.getMaxHealth()/2); //addHealth(getMaxHealth()/2);
 		}
 		
 		else 
-			health = maxHealth; 
+			this.setHealth(this.getMaxHealth()); 
 		return 0; 
 	}
 }

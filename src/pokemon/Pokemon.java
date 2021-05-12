@@ -1,25 +1,34 @@
+/**
+ * 
+ * @author Rishi Zamvar
+ *
+ */
+
 package pokemon;
 
 public class Pokemon {
-	int health, level;
-	boolean isAlive;
+	private int health;
 	
-	int maxHealth; 
+	private double level;
 	
-	int speedBase; 
+	private boolean isAlive;
+	
+	private int maxHealth; 
+	
+	private int speedBase; 
 	
 	
-	char type; // a = air, f = fire, e = earth, w = water, g = grass;
+	private char type; // a = air, f = fire, e = earth, w = water, g = grass;
 	
-	int aStatN;  // attack stat numerator 
+	private int aStatN;  // attack stat numerator 
 	
-	double aStatM; // attack stat multiplier
+	private double aStatM; // attack stat multiplier
 	
-	int sStatN;  // speed stat numerator 
+	private int sStatN;  // speed stat numerator 
 	
-	double sStatM; // speed stat multiplier
+	private double sStatM; // speed stat multiplier
 	
-	public boolean isProtected; //for move protect
+	private boolean isProtected; //for move protect
 	
 	
 	public Pokemon() {
@@ -37,29 +46,31 @@ public class Pokemon {
 		
 	}
 	
-	public Pokemon (char type, int maxHealth, int level) {
+	public Pokemon (char type, int maxHealth, double level) {
 		this.type = type; 
-		this.health = maxHealth; 
+		this.maxHealth=((int)(maxHealth * (level/10)));
+		this.health = this.getMaxHealth(); 
 		this.level = level; 
-		this.maxHealth = maxHealth;
+		
 		
 		aStatN = 2;
-		aStatM = aStatN/2;
+		aStatM = (aStatN/2)*(level/10);
 		
 		sStatN = 2;
-		sStatM = sStatN/2;
+		sStatM = sStatN/2*(level/10);
 	}
 	
-	public int getHealth() {
-		return health; 
-	}
 	
 	public char getType() {
 		return type; 
 	}
 	
-	public int getLevel() {
+	public double getLevel() {
 		return level; 
+	}
+	
+	public void setLevel(double amt) {
+		level+=amt; 
 	}
 	
 	public void changeAstat(int amt) {
@@ -72,12 +83,48 @@ public class Pokemon {
 		sStatM = sStatN/2;
 	}
 	
-	public double getAstat() {
+	public double getAStat() {
 		return aStatM;
 	}
 	
 	public double getSstat() {
-		return sStatM;
+		return sStatM*speedBase;
+	}
+
+	public int getSpeedBase() {
+		return speedBase;
+	}
+
+	public void setSpeedBase(int speedBase) {
+		this.speedBase += speedBase;
+	}
+
+	public boolean isProtected() {
+		return isProtected;
+	}
+
+	public void setProtected(boolean isProtected) {
+		this.isProtected = isProtected;
+	}
+
+	public int getMaxHealth() {
+		return maxHealth;
+	}
+
+	public void setMaxHealth() {
+		this.maxHealth *= level/10;
+	}
+	
+	public int getHealth() {
+		return health;
+	}
+	
+	public void addHealth(int add) {
+		this.health+=add; 
+	}
+	
+	public void setHealth(int health) {
+		this.health=health; 
 	}
 	
 	
