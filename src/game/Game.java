@@ -3,17 +3,25 @@ package game;
 import pokemon.*;
 
 public class Game {
-	Player [] players = new Player[2];
+	Pokemon p1, p2;
 	int turn; // 0 for player1, 1 for player2
 
-	public Game() {
-		players[0] = new Player();
-		players[1] = new Player();
+	public Game(Pokemon p1, Pokemon p2) {
+		this.p1 = p1;
+		this.p2 = p2;
 		turn = 0;
 	}
 
-	public void makeMove(int i) {
-		players[turn].move(i);
+	public void act() {
+		if (win() == 0) {
+			if (turn == 0) {
+				p1.
+			} else {
+
+			}
+
+			changeTurn();
+		}
 	}
 
 	public void changeTurn() {
@@ -22,14 +30,9 @@ public class Game {
 	}
 
 	public int win() {
-		Pokemon p = players[0].current;
-		Pokemon p2 = players[1].current;
-
-		if (p.getHealth() == 0)
-			players[1].levelUp();
-		return 2; // player 1's pokemon dies
-		if (p2.getHealth() == 0) {
-			players[0].levelUp();
+		if (p1.getHealth() == 0)
+			return 2; // player 1's pokemon dies
+		else if (p2.getHealth() == 0) {
 			return 1; // player 2's pokemon dies
 		}
 

@@ -99,4 +99,12 @@ public class SelectScreen extends Screen {
 			}
 		}
 	}
+
+	public int getChoice1() {
+		return choice1;
+	}
+
+	public int getChoice2() {
+		return choice2;
+	}
 }
