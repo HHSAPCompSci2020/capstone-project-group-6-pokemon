@@ -6,6 +6,8 @@
 
 package pokemon;
 
+import java.util.ArrayList;
+
 public class Pokemon {
 	private int health;
 	
@@ -29,6 +31,8 @@ public class Pokemon {
 	private double sStatM; // speed stat multiplier
 	
 	private boolean isProtected; //for move protect
+	
+	protected ArrayList<String> moves;  
 	
 	
 	public Pokemon() {
@@ -125,6 +129,11 @@ public class Pokemon {
 	
 	public void setHealth(int health) {
 		this.health=health; 
+	}
+	
+	public int move (int num) {
+		return 0;
+		
 	}
 	
 	

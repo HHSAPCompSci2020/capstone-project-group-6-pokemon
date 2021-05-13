@@ -8,19 +8,25 @@ public class Pikachu extends Pokemon{
 	public Pikachu(int health, int level) {
 		super('e', health, level);
 		setSpeedBase(60);
+		moves.add("Nuzzle"); 
+		moves.add("Protect"); 
+		moves.add("Agility");
 	}
 	
-	public int nuzzle () {
-		return (int)(60*getAStat()); 
-	}  
-	
-	public int protect () {
-		setProtected(true); 
-		return 0; 
-	} 
-	
-	public int agility () {
-		changeSstat(2); 
-		return 0; 
+	public int move (int num) {
+		if (num==1) {
+			return (int)(60*getAStat()); 
+		}
+		else if(num == 2) {
+			setProtected(true); 
+			return 0;
+		}
+		
+		else {
+			changeSstat(2); 
+			return 0;
+		}
 	}
+	
+	
 }

@@ -6,7 +6,6 @@ package menus;
 import java.awt.Point;
 import java.util.ArrayList;
 
-import game.GameScreen;
 import processing.core.PApplet;
 
 public class DrawingSurface extends PApplet implements ScreenSwitcher {
