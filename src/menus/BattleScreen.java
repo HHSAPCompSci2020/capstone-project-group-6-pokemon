@@ -2,6 +2,7 @@ package menus;
 
 import java.awt.Point;
 import java.awt.Rectangle;
+import java.util.ArrayList;
 
 import game.*;
 import pokemon.*;
@@ -155,12 +156,22 @@ public class BattleScreen extends Screen {
 	 */
 	public void mousePressed() {
 		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX, surface.mouseY));
-
+		ArrayList<Integer> moveToUse = new ArrayList<Integer>();
 		for (int i = 0; i < clickState.length; i++) {
 			clickState[i] = false;
 			if (actions[i].contains(p)) {
 				clickState[i] = !clickState[i];
-
+                if (game.getTurn()==1) {
+                	
+                	if(moveToUse.size()>=2) {
+                		game.move(moveToUse);
+                		moveToUse.remove(0);
+                		moveToUse.remove(0);
+                	}
+                	
+                	else
+                		moveToUse.add(i);
+                }
 				if (i == 0) {
 					if (game.getTurn() != 1)
 						game.getp2().addHealth(-10);
