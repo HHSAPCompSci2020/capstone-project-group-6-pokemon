@@ -3,8 +3,8 @@ package game;
 import pokemon.*;
 
 public class Game {
-	Pokemon p1, p2;
-	int turn; // 0 for player1, 1 for player2
+	private Pokemon p1, p2;
+	private int turn; // 0 for player1, 1 for player2
 
 	public Game(Pokemon p1, Pokemon p2) {
 		this.p1 = p1;
