@@ -4,6 +4,7 @@ import java.awt.Point;
 import java.awt.Rectangle;
 
 import game.*;
+import processing.core.PImage;
 
 public class BattleScreen extends Screen{
 	
@@ -23,6 +24,8 @@ public class BattleScreen extends Screen{
 	
 	private String[] actionLabels;
 	private String dialogueText;
+	
+	private PImage image;
 	
 	private boolean turn = false;
 	//when false, it is player 1's turn, when true it is player 2's turn
@@ -114,6 +117,13 @@ public class BattleScreen extends Screen{
 		surface.text("HP: ", health1.x+health1.width+20, health1.y);
 		surface.text("100/100" /*game.getp1().getHealth()*/, health1.x+health1.width+50, health1.y);
 		
+		surface.text("HP: ", health2.x+health2.width+20, health2.y);
+		surface.text("100/100" /*game.getp2().getHealth()*/, health2.x+health2.width+50, health2.y);
+		
+		surface.text("Other stats to be added", health1.x, health1.y+30);
+		surface.text("Other stats to be added", health2.x, health2.y+30);
+		
+		surface.PImage();
 		
 		
 		surface.popStyle();
