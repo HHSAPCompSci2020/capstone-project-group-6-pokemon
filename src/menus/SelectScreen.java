@@ -18,7 +18,7 @@ public class SelectScreen extends Screen {
 	private int x, y;
 
 	private DrawingSurface surface;
-
+	private BattleScreen screen;
 	private Rectangle[] options = new Rectangle[10];
 	private Rectangle done;
 	private int choice1 = -1, choice2 = -1;
@@ -29,9 +29,10 @@ public class SelectScreen extends Screen {
 	 * players can choose which pokemon they will fight with and their selection
 	 * will be indicated with the button having a different color.
 	 */
-	public SelectScreen(DrawingSurface surface) {
+	public SelectScreen(DrawingSurface surface, BattleScreen screen) {
 		super(800, 600);
 		this.surface = surface;
+		this.screen = screen;
 		// PIKACHU
 		options[0] = new Rectangle(50, 100, 200, 50);
 		options[1] = new Rectangle(550, 100, 200, 50);
@@ -74,7 +75,7 @@ public class SelectScreen extends Screen {
 				surface.noFill();
 			surface.rect(options[i].x, options[i].y, options[i].width, options[i].height, 10, 10, 10, 10);
 		}
-		
+
 		surface.fill(0);
 
 		surface.text("Player 1: Select a Pokemon", 60, 50);
@@ -108,7 +109,7 @@ public class SelectScreen extends Screen {
 	 */
 	public void mousePressed() {
 		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX, surface.mouseY));
-		if (done.contains(p) && p1 != null && p2 != null ) { // go to gamescreen only if they have choosen
+		if (done.contains(p) && p1 != null && p2 != null) { // go to gamescreen only if they have choosen
 			surface.switchScreen(ScreenSwitcher.SCREEN4);
 		}
 		for (int i = 0; i < options.length; i++) {
@@ -118,40 +119,29 @@ public class SelectScreen extends Screen {
 				else
 					choice2 = i;
 				if (choice1 == 0) {
-					p1 = new Pikachu(100, 1);
+					screen.getGame().setP1(new Pikachu(100, 1));
 				} else if (choice1 == 1) {
-					p1 = new JigglyPuff(100, 1);
+					screen.getGame().setP1(new JigglyPuff(100, 1));
 				} else if (choice1 == 2) {
-					p1 = new Bulbasaur(100, 1);
+					screen.getGame().setP1(new Bulbasaur(100, 1));
 				} else if (choice1 == 3) {
-					p1 = new Charmander(100, 1);
+					screen.getGame().setP1(new Charmander(100, 1));
 				} else if (choice1 == 4) {
-					p1 = new Squirtle(100, 1);
+					screen.getGame().setP1(new Squirtle(100, 1));
 				}
 
 				if (choice2 == 0) {
-					p2 = new Pikachu(100, 1);
+					screen.getGame().setP2(new Pikachu(100, 1));
 				} else if (choice2 == 1) {
-					p2 = new JigglyPuff(100, 1);
+					screen.getGame().setP2(new JigglyPuff(100, 1));
 				} else if (choice2 == 2) {
-					p2 = new Bulbasaur(100, 1);
+					screen.getGame().setP2(new Bulbasaur(100, 1));
 				} else if (choice2 == 3) {
-					p2 = new Charmander(100, 1);
+					screen.getGame().setP2(new Charmander(100, 1));
 				} else if (choice2 == 4) {
-					p2 = new Squirtle(100, 1);
+					screen.getGame().setP2(new Squirtle(100, 1));
 				}
 			}
 		}
-	}
-
-	/**
-	 * This creates a game with the pokemon selected by the user with the PApplet
-	 * surface
-	 * 
-	 * @return a new Game with the pokemon selected
-	 */
-
-	public Game getGame() {
-		return new Game(p1, p2);
 	}
 }
