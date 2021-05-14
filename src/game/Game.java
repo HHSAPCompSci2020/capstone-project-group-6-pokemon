@@ -21,11 +21,15 @@ public class Game {
 	}
 
 	public void act() {
-		if (win() == 0) {
-			if (turn == 0) {
-			} else {
-			}
-			changeTurn();
+//		if (win() == 0) {
+//			if (turn == 0) {
+//			} else {
+//			}
+//			changeTurn();
+//		}
+		
+		if (turn == 0) {
+			p1.move(num);
 		}
 	}
 
