@@ -19,52 +19,40 @@ public class Game {
 	public void setP2(Pokemon p) {
 		p2 = p;
 	}
-<<<<<<< Updated upstream
-
-	public void act() {
-//		if (win() == 0) {
-//			if (turn == 0) {
-//			} else {
-//			}
-//			changeTurn();
-//		}
-
-		if (turn == 0) {
-			p1.move(num);
-=======
 	
 	public void move() {
 		
+		
+		
 		if (p1.getSpeedBase()> p2.getSpeedBase()) {
 			p2.addHealth(p1.move(1)*-1); 
->>>>>>> Stashed changes
 		}
 		else  {
 			p1.addHealth(p2.move(1)*-1); 
 		}
 		
-		this.win();
+		win();
+		
 	}
 
-<<<<<<< Updated upstream
+	
+
 	public void changeTurn() {
+		
+		if (turn % 2 == 0) {
+			turn = 1;
+		}
 		turn++;
-		turn = turn % 2;
+		
 	}
-
-	public Pokemon getp1() {
-=======
-	
-
-	
 	
 	public Pokemon getp1()
 	{
->>>>>>> Stashed changes
 		return p1;
 	}
-
-	public Pokemon getp2() {
+	
+	public Pokemon getp2()
+	{
 		return p2;
 	}
 
@@ -76,9 +64,5 @@ public class Game {
 		}
 
 		return 0;
-	}
-
-	public int getTurn() {
-		return turn;
 	}
 }
