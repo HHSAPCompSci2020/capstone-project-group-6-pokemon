@@ -166,7 +166,7 @@ public class BattleScreen extends Screen {
 		// surface.image(surface.loadImage("charmander.png"), health2.x + 200, health2.y
 		// + 70, 150, 180);
 		surface.popStyle();
-
+		// reset if win
 		if (game.win() == 1 || game.win() == 2) {
 			game.getp1().setHealth(100);
 			game.getp2().setHealth(100);
@@ -185,30 +185,35 @@ public class BattleScreen extends Screen {
 			clickState[i] = false;
 			if (actions[i].contains(p)) {
 				clickState[i] = !clickState[i];
-				if (game.getTurn() == 1) {
-
-					if (moveToUse.size() >= 2) {
-						game.move(moveToUse);
-						moveToUse.remove(0);
-						moveToUse.remove(0);
-					}
-
-					else
-						moveToUse.add(i);
-				}
 				/*
-				 * if (i == 0) { if (game.getTurn() != 1) game.getp2().addHealth(-10); else
-				 * game.getp1().addHealth(-10);
+				 * if (game.getTurn() == 1) {
 				 * 
-				 * } else if (i == 1) { if (game.getTurn() != 1) game.getp1().addHealth(10);
-				 * else game.getp2().addHealth(10);
+				 * if (moveToUse.size() >= 2) { game.move(moveToUse); moveToUse.remove(0);
+				 * moveToUse.remove(0); }
 				 * 
-				 * } else if (i == 2) { if (game.getTurn() != 1) game.getp2().addHealth((int)
-				 * (-Math.random() * 25)); else game.getp1().addHealth((int) (-Math.random() *
-				 * 25));
-				 * 
-				 * }
+				 * else moveToUse.add(i); }
 				 */
+
+				if (i == 0) {
+					if (game.getTurn() != 1)
+						game.getp2().addHealth(-10);
+					else
+						game.getp1().addHealth(-10);
+
+				} else if (i == 1) {
+					if (game.getTurn() != 1)
+						game.getp1().addHealth(10);
+					else
+						game.getp2().addHealth(10);
+
+				} else if (i == 2) {
+					if (game.getTurn() != 1)
+						game.getp2().addHealth((int) (-Math.random() * 25));
+					else
+						game.getp1().addHealth((int) (-Math.random() * 25));
+
+				}
+
 				game.changeTurn();
 
 				for (int j = 0; j < clickState.length; j++) {
