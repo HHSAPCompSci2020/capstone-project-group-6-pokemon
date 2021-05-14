@@ -23,6 +23,9 @@ public class Charmander extends Pokemon {
 	public Charmander(int health, int level) {
 		super('f', health, level);
 		setSpeedBase(30);
+		setMoveName(0,"Ember");
+		setMoveName(1,"Protect");
+		setMoveName(2,"Blaze");
 		/*
 		 * moves.add("Ember"); moves.add("Protect"); moves.add("Blaze");
 		 */

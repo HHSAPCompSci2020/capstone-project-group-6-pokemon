@@ -32,7 +32,7 @@ public class Pokemon {
 
 	private boolean isProtected; // for move protect
 
-	protected String[] moves;
+	private String[] moves = new String[3];
 
 	/**
 	 * Constructs a pokemon
@@ -48,6 +48,9 @@ public class Pokemon {
 
 		sStatN = 2;
 		sStatM = sStatN / 2;
+		moves[0] = "attack";
+		moves[1] = "heal";
+		moves[2] = "random";
 
 	}
 
@@ -71,6 +74,9 @@ public class Pokemon {
 
 		sStatN = 2;
 		sStatM = sStatN / 2 * (level / 10);
+		moves[0] = "attack";
+		moves[1] = "heal";
+		moves[2] = "random";
 	}
 
 	/**
@@ -137,14 +143,14 @@ public class Pokemon {
 	public double getSstat() {
 		return sStatM * speedBase;
 	}
-	
+
 	public boolean getProtect() {
 		return isProtected;
-		
+
 	}
-	
+
 	public void toggleProtect() {
-		this.isProtected = !isProtected; 
+		this.isProtected = !isProtected;
 	}
 
 	/**
@@ -178,7 +184,6 @@ public class Pokemon {
 	public void setProtected(boolean isProtected) {
 		this.isProtected = isProtected;
 	}
-	
 
 	/**
 	 * This gets the maximum health of the Pokemon
@@ -233,9 +238,12 @@ public class Pokemon {
 		return 0;
 
 	}
-	
-	public String getMoveName (int num) {
+
+	public String getMoveName(int num) {
 		return moves[num];
 	}
 
+	public void setMoveName(int num, String s) {
+		moves[num] = s;
+	}
 }

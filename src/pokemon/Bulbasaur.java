@@ -23,6 +23,9 @@ public class Bulbasaur extends Pokemon {
 	public Bulbasaur(int health, int level) {
 		super('g', health, level);
 		setSpeedBase(40);
+		setMoveName(0, "Vine Whip");
+		setMoveName(1, "Protect");
+		setMoveName(2, "Growth");
 		/*
 		 * moves.add("Vine Whip"); moves.add("Protect"); moves.add("Growth");
 		 */
