@@ -120,8 +120,8 @@ Credits:
          * https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinclipart.com%2Fpindetail%2Fowwboi_pokemon-fire-red-charmander-sprite-clipart%2F&psig=AOvVaw2hR1k18PhDaPVy3lHDoQ8P&ust=1620839867962000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNiZn5eRwvACFQAAAAAdAAAAABAD
       * pikachu
          * https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngjoy.com%2Fpreview%2Fx6d8q8b3i0d9j8_pokemon-pikachu-female-pikachu-sprite-gif-png-download%2F&psig=AOvVaw1vR79NuVQCmw2g0aPfFHXG&ust=1620840041694000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNCM4YmSwvACFQAAAAAdAAAAABAD
-        * bulbasaur
-      * https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngfind.com%2Fmpng%2FiRJiho_bulbasaur-png-image-with-transparent-background-bulbasaur-sprite%2F&psig=AOvVaw1sacsxfs--LsHCo6vQREN7&ust=1620839995827000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCODo8ZCSwvACFQAAAAAdAAAAABAD
-      *            * jiggly puff
+      * bulbasaur
+         * https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngfind.com%2Fmpng%2FiRJiho_bulbasaur-png-image-with-transparent-background-bulbasaur-sprite%2F&psig=AOvVaw1sacsxfs--LsHCo6vQREN7&ust=1620839995827000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCODo8ZCSwvACFQAAAAAdAAAAABAD
+      * jiggly puff
          * https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngaaa.com%2Fdetail%2F3980771&psig=AOvVaw2xfH1nRSxRqu38mnaMPB2r&ust=1620840074789000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNCB6PqRwvACFQAAAAAdAAAAABAD 
-         *
+         

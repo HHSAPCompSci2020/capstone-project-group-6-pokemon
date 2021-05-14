@@ -99,7 +99,7 @@ public class BattleScreen extends Screen {
 		}
 
 		// dialogue box text
-		dialogueText = "Player " + (game.getTurn() + 1) + " select a move";
+		dialogueText = "Player " + game.getTurn() + " select a move";
 		float dialogueTextWidth = surface.textWidth(dialogueText);
 		surface.text(dialogueText, dialogue.x + dialogue.width / 2 - dialogueTextWidth / 2,
 				dialogue.y + dialogue.height / 2);
@@ -127,6 +127,13 @@ public class BattleScreen extends Screen {
 			clickState[i] = false;
 			if (actions[i].contains(p)) {
 				clickState[i] = !clickState[i];
+				// game.move(i);
+				game.changeTurn();
+				//reset clickState for next player
+				for (int j = 0; j < clickState.length; j++) {
+					clickState[i] = false;
+				}
+				break;
 			}
 		}
 	}
