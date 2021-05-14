@@ -123,7 +123,8 @@ public class BattleScreen extends Screen{
 		surface.text("Other stats to be added", health1.x, health1.y+30);
 		surface.text("Other stats to be added", health2.x, health2.y+30);
 		
-		surface.PImage();
+		surface.image(surface.loadImage("pikachu.png"), health1.x, health2.y+70, 150, 180);
+		surface.image(surface.loadImage("charmander.png"), health2.x+200, health2.y+70, 150, 180);
 		
 		
 		surface.popStyle();
