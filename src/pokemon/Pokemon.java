@@ -238,6 +238,10 @@ public class Pokemon {
 		return 0;
 
 	}
+	
+	public void toggleAlive() {
+		this.isAlive = !isAlive; 
+	}
 
 	public String getMoveName(int num) {
 		return moves[num];

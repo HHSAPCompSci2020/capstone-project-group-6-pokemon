@@ -124,6 +124,7 @@ public class Game {
 	 */
 	public int win() {
 		if (p1.getHealth() <= 0)
+			p1.set
 			return 2; // player 1's pokemon dies
 		else if (p2.getHealth() <= 0) {
 			return 1; // player 2's pokemon dies
