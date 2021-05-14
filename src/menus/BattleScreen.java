@@ -29,8 +29,8 @@ public class BattleScreen extends Screen {
 
 	private String[] actionLabels;
 	private String dialogueText;
-	private String player1;
-	private String player2;
+	private String player1 = "";
+	private String player2 = "";
 
 	// when false, it is player 1's turn, when true it is player 2's turn
 	/**
@@ -132,44 +132,36 @@ public class BattleScreen extends Screen {
 		surface.text("Player 1", health1.x, health1.y + 30);
 		surface.text("Player 2", health2.x, health2.y + 30);
 
-		
-		//player 1
-		
-		if(game.getp1() instanceof Pikachu)
-		{
+		// player 1
+
+		if (game.getp1() instanceof Pikachu) {
 			player1 = "pikachu";
-		} else if(game.getp1() instanceof Charmander)
-		{
+		} else if (game.getp1() instanceof Charmander) {
 			player1 = "charmander";
-		} else if(game.getp1() instanceof JigglyPuff)
-		{
+		} else if (game.getp1() instanceof JigglyPuff) {
 			player1 = "jigglypuff";
-		} else if(game.getp1() instanceof Bulbasaur)
-		{
+		} else if (game.getp1() instanceof Bulbasaur) {
 			player1 = "bulbasaur";
 		}
 		System.out.println(player1);
 		surface.image(surface.loadImage(player1 + ".png"), health1.x, health2.y + 70, 150, 180);
 
-		//player 2
-		if(game.getp2() instanceof Pikachu)
-		{
+		// player 2
+		if (game.getp2() instanceof Pikachu) {
 			player2 = "pikachu";
-		} else if(game.getp2() instanceof Charmander)
-		{
+		} else if (game.getp2() instanceof Charmander) {
 			player2 = "charmander";
-		} else if(game.getp2() instanceof JigglyPuff)
-		{
+		} else if (game.getp2() instanceof JigglyPuff) {
 			player2 = "jigglypuff";
-		} else if(game.getp2() instanceof Bulbasaur)
-		{
+		} else if (game.getp2() instanceof Bulbasaur) {
 			player2 = "bulbasaur";
 		}
-		surface.image(surface.loadImage(player2+".png"), health2.x + 200, health2.y + 70, 150, 180);
-		
-		
-		//surface.image(surface.loadImage("pikachu.png"), health1.x, health2.y + 70, 150, 180);
-		//surface.image(surface.loadImage("charmander.png"), health2.x + 200, health2.y + 70, 150, 180);
+		surface.image(surface.loadImage(player2 + ".png"), health2.x + 200, health2.y + 70, 150, 180);
+
+		// surface.image(surface.loadImage("pikachu.png"), health1.x, health2.y + 70,
+		// 150, 180);
+		// surface.image(surface.loadImage("charmander.png"), health2.x + 200, health2.y
+		// + 70, 150, 180);
 		surface.popStyle();
 
 		if (game.win() == 1 || game.win() == 2) {
