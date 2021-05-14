@@ -112,7 +112,7 @@ public class BattleScreen extends Screen{
 		
 		//stats
 		surface.text("HP: ", health1.x+health1.width+20, health1.y);
-		surface.text(game.getp1().getHealth(), health1.x+health1.width+50, health1.y);
+		surface.text("100/100" /*game.getp1().getHealth()*/, health1.x+health1.width+50, health1.y);
 		
 		
 		
