@@ -94,7 +94,8 @@ public class Game {
 		if (turn == 0)
 			turn = 1;
 		else
-			turn = 0;
+			turn = 0; 
+	
 
 	}
 
