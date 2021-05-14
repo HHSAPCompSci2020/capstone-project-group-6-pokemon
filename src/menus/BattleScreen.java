@@ -70,7 +70,8 @@ public class BattleScreen extends Screen{
 		
 		surface.rect(dialogue.x, dialogue.y, dialogue.width, dialogue.height, 10, 10, 10, 10);
 		
-		
+		surface.fill(0);
+
 		//adding text
 		for (int i = 0; i < actions.length; i++) {
 			float w = surface.textWidth(actionLabels[i]);
