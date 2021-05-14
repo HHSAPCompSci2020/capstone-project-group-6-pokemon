@@ -15,6 +15,9 @@ public class EndScreen extends Screen {
 
 	/**
 	 * Constructs a screen with a width of 800 and a height of 600.
+	 * 
+	 * @param surface the drawing PApplet surface that the screen will be displayed
+	 *                on
 	 */
 	public EndScreen(DrawingSurface surface) {
 		super(800, 600);

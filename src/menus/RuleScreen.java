@@ -19,6 +19,8 @@ public class RuleScreen extends Screen {
 	/**
 	 * Constructs a screen that contains the rules of the game. It has a width of
 	 * 800 and a height of 600.
+	 * 
+	 * @param surface the surface the screen will be drawn on
 	 */
 	public RuleScreen(DrawingSurface surface) {
 		super(800, 600);

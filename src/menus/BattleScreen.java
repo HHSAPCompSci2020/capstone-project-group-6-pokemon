@@ -37,7 +37,7 @@ public class BattleScreen extends Screen {
 	 * Constructs a screen with the given game on the provided PApplet surface
 	 * 
 	 * @param surface the surface the screen will be drawn on
-	 * @param game    the that is going to be played
+	 * @param screen  the screen that will appear after the game is won
 	 */
 	public BattleScreen(DrawingSurface surface, EndScreen screen) {
 		super(800, 600);
@@ -157,7 +157,7 @@ public class BattleScreen extends Screen {
 			player2 = "jigglypuff";
 		} else if (game.getp2() instanceof Bulbasaur) {
 			player2 = "bulbasaur";
-		} else{
+		} else {
 			player2 = "squirtle";
 		}
 		surface.image(surface.loadImage(player2 + ".png"), health2.x + 160, health2.y + 70, 150, 180);
@@ -194,6 +194,11 @@ public class BattleScreen extends Screen {
 		}
 	}
 
+	/**
+	 * This gets the game of that will be displayed on the battle screen
+	 * 
+	 * @return the game
+	 */
 	public Game getGame() {
 		return game;
 	}

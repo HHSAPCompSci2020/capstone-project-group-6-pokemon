@@ -47,6 +47,8 @@ public class Game {
 
 	/**
 	 * This makes a move in the game
+	 * 
+	 * @param num the index of the move that will be performed
 	 */
 	public void move(int num) {
 

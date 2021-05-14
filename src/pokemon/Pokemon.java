@@ -70,7 +70,7 @@ public class Pokemon {
 		this.level = level;
 
 		aStatN = 2;
-		aStatM = (aStatN / 2) ;
+		aStatM = (aStatN / 2);
 
 		sStatN = 2;
 		sStatM = sStatN / 2;
@@ -159,7 +159,7 @@ public class Pokemon {
 	 * @return the speed base of the Pokemon
 	 */
 	public int getSpeedBase() {
-		return speedBase; 
+		return speedBase;
 	}
 
 	public void setSpeedBase(int speedBase) {
@@ -238,15 +238,29 @@ public class Pokemon {
 		return 0;
 
 	}
-	
+
+	/**
+	 * This toggles the state life state of the pokemon
+	 */
 	public void toggleAlive() {
-		this.isAlive = !isAlive; 
+		this.isAlive = !isAlive;
 	}
 
+	/**
+	 * This gets the name of a move
+	 * 
+	 * @param num the index of the move name
+	 * @return the name of the move that is at the index
+	 */
 	public String getMoveName(int num) {
 		return moves[num];
 	}
 
+	/**
+	 * This sets the name of a move
+	 * @param num the index that will be set with the name
+	 * @param s the name
+	 */
 	public void setMoveName(int num, String s) {
 		moves[num] = s;
 	}

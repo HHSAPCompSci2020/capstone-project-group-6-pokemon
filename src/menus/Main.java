@@ -19,7 +19,7 @@ public class Main {
 	/**
 	 * This is the main method that runs the program.
 	 * 
-	 * @param args
+	 * @param args that argument of the main
 	 */
 	public static void main(String[] args) {
 

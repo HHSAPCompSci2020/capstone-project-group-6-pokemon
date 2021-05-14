@@ -19,6 +19,9 @@ public class MenuScreen extends Screen {
 	/**
 	 * Constructs a starting screen for the game with a width of 800 and a height of
 	 * 600.
+	 * 
+	 * @param surface the surface the screen will be drawn on
+	 * 
 	 */
 	public MenuScreen(DrawingSurface surface) {
 		super(800, 600);

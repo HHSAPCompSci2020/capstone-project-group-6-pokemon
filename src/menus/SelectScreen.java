@@ -28,6 +28,9 @@ public class SelectScreen extends Screen {
 	 * Constructs a select screen with a width of 800 and a height of 600. The
 	 * players can choose which pokemon they will fight with and their selection
 	 * will be indicated with the button having a different color.
+	 * 
+	 * @param surface the surface the screen will be drawn on
+	 * @param screen  the surface that the game will be played on
 	 */
 	public SelectScreen(DrawingSurface surface, BattleScreen screen) {
 		super(800, 600);
