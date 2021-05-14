@@ -109,7 +109,7 @@ public class SelectScreen extends Screen {
 	 */
 	public void mousePressed() {
 		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX, surface.mouseY));
-		if (done.contains(p) && p1 != null && p2 != null && choice1 != -1 && choice2 != -2) { // go to gamescreen only
+		if (done.contains(p) && p1 != null && p2 != null && choice1 != -1 && choice2 != -1) { // go to gamescreen only
 																								// if they have choosen
 			choice1 = -1;
 			choice2 = -1;
