@@ -24,8 +24,8 @@ public class Squirtle extends Pokemon {
 		super('g', health, level);
 		setSpeedBase(40);
 		setMoveName(1,"Water Gun");
-		setMoveName(0,"Protect");
-		setMoveName(2,"Calm Mind");
+		setMoveName(2,"Protect");
+		setMoveName(0,"Calm Mind");
 	}
 
 	/**

@@ -20,7 +20,7 @@ public class Game {
 	 * 
 	 * @param p1 the first Pokemon
 	 * @param p2 the second Pokemon
-	 */
+	 */ 
 	public Game(Pokemon p1, Pokemon p2) {
 		this.p1 = p1;
 		this.p2 = p2;
@@ -52,6 +52,7 @@ public class Game {
 
 		if (getTurn() == 1) {
 			if (p2.getProtect()) {
+				p1.toggleProtect();
 
 			} else
 				p2.addHealth(p1.move(num)*(-1));
@@ -60,13 +61,14 @@ public class Game {
 		else {
 		
 			if (p1.getProtect()) {
+				p1.toggleProtect();
 
-			} else
+			} else 
 				p1.addHealth(p2.move(num)*(-1));
 		
 		}
 		
-		changeTurn();
+		//changeTurn();
 //		if (p2.getSpeedBase() > p1.getSpeedBase()) {
 //			if (p1.getProtect()) {
 //
@@ -79,7 +81,7 @@ public class Game {
 //				p2.addHealth(p2.move(num) * -1);
 //		}
 
-		win();
+		//win();
 
 	}
 	

@@ -24,8 +24,8 @@ public class JigglyPuff extends Pokemon {
 		super('n', health, level);
 		setSpeedBase(10);
 		setMoveName(1, "Rollout");
-		setMoveName(0, "Protect");
-		setMoveName(2, "Recover");
+		setMoveName(2, "Protect");
+		setMoveName(0, "Recover");
 		/*
 		 * moves.add("Rollout"); moves.add("Protect"); moves.add("Recover");
 		 */
