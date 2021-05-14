@@ -6,6 +6,12 @@ import java.awt.Rectangle;
 import game.*;
 import processing.core.PImage;
 
+/**
+ * This represents a PApplet screen that is the game screen is.
+ * 
+ * @author Isa Pudiyapura
+ *
+ */
 public class BattleScreen extends Screen {
 
 	private Game game;
@@ -27,8 +33,14 @@ public class BattleScreen extends Screen {
 	private PImage image;
 
 	private boolean turn = false;
-	// when false, it is player 1's turn, when true it is player 2's turn
 
+	// when false, it is player 1's turn, when true it is player 2's turn
+	/**
+	 * Constructs a screen with the given game on the provided PApplet surface
+	 * 
+	 * @param surface the surface the screen will be drawn on
+	 * @param game    the that is going to be played
+	 */
 	public BattleScreen(DrawingSurface surface, Game game) {
 		super(800, 600);
 		this.game = game;
@@ -59,6 +71,9 @@ public class BattleScreen extends Screen {
 
 	}
 
+	/**
+	 * This draws the screen on the PApplet surface
+	 */
 	public void draw() {
 		surface.pushStyle();
 
@@ -120,6 +135,9 @@ public class BattleScreen extends Screen {
 		surface.popStyle();
 	}
 
+	/**
+	 * This changes with screens and buttons when the mouse is pressed
+	 */
 	public void mousePressed() {
 		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX, surface.mouseY));
 
@@ -129,7 +147,7 @@ public class BattleScreen extends Screen {
 				clickState[i] = !clickState[i];
 				// game.move(i);
 				game.changeTurn();
-				//reset clickState for next player
+				// reset clickState for next player
 				for (int j = 0; j < clickState.length; j++) {
 					clickState[i] = false;
 				}
