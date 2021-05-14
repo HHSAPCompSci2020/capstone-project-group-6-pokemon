@@ -53,7 +53,7 @@ public class BattleScreen extends Screen {
 		}
 
 		// stats for each pokemon
-		stats[0] = new Rectangle(20, 400, 350, 120);
+		stats[0] = new Rectangle(20, 400, 350, 75);
 		stats[1] = new Rectangle(430, 100, 350, 75);
 		health2 = new Rectangle(450, 120, 200, 10);
 		health1 = new Rectangle(40, 420, 200, 10);
@@ -143,7 +143,7 @@ public class BattleScreen extends Screen {
 		} else if (game.getp1() instanceof Bulbasaur) {
 			player1 = "bulbasaur";
 		} else if (game.getp1() instanceof Squirtle) {
-			player1 = "bulbasaur";
+			player1 = "squirtle";
 		}
 		surface.image(surface.loadImage(player1 + ".png"), health1.x, health2.y + 70, 150, 180);
 
@@ -157,14 +157,10 @@ public class BattleScreen extends Screen {
 		} else if (game.getp2() instanceof Bulbasaur) {
 			player2 = "bulbasaur";
 		} else if (game.getp2() instanceof Squirtle) {
-			player2 = "bulbasaur";
+			player2 = "squirtle";
 		}
-		surface.image(surface.loadImage(player2 + ".png"), health2.x + 200, health2.y + 70, 150, 180);
+		surface.image(surface.loadImage(player2 + ".png"), health2.x + 160, health2.y + 70, 150, 180);
 
-		// surface.image(surface.loadImage("pikachu.png"), health1.x, health2.y + 70,
-		// 150, 180);
-		// surface.image(surface.loadImage("charmander.png"), health2.x + 200, health2.y
-		// + 70, 150, 180);
 		surface.popStyle();
 		// reset if win
 		if (game.win() == 1 || game.win() == 2) {
@@ -185,35 +181,28 @@ public class BattleScreen extends Screen {
 			clickState[i] = false;
 			if (actions[i].contains(p)) {
 				clickState[i] = !clickState[i];
-				/*
-				 * if (game.getTurn() == 1) {
-				 * 
-				 * if (moveToUse.size() >= 2) { game.move(moveToUse); moveToUse.remove(0);
-				 * moveToUse.remove(0); }
-				 * 
-				 * else moveToUse.add(i); }
-				 */
-
-				if (i == 0) {
-					if (game.getTurn() != 1)
-						game.getp2().addHealth(-10);
-					else
-						game.getp1().addHealth(-10);
-
-				} else if (i == 1) {
-					if (game.getTurn() != 1)
-						game.getp1().addHealth(10);
-					else
-						game.getp2().addHealth(10);
-
-				} else if (i == 2) {
-					if (game.getTurn() != 1)
-						game.getp2().addHealth((int) (-Math.random() * 25));
-					else
-						game.getp1().addHealth((int) (-Math.random() * 25));
-
+				moveToUse.add(i);
+				if (game.getTurn() == 1) {
+					if (moveToUse.size() >= 2) {
+						game.move(moveToUse);
+						moveToUse.remove(0);
+						moveToUse.remove(0);
+					}
 				}
 
+				/*
+				 * if (i == 0) { if (game.getTurn() != 1) game.getp2().addHealth(-10); else
+				 * game.getp1().addHealth(-10);
+				 * 
+				 * } else if (i == 1) { if (game.getTurn() != 1) game.getp1().addHealth(10);
+				 * else game.getp2().addHealth(10);
+				 * 
+				 * } else if (i == 2) { if (game.getTurn() != 1) game.getp2().addHealth((int)
+				 * (-Math.random() * 25)); else game.getp1().addHealth((int) (-Math.random() *
+				 * 25));
+				 * 
+				 * }
+				 */
 				game.changeTurn();
 
 				for (int j = 0; j < clickState.length; j++) {

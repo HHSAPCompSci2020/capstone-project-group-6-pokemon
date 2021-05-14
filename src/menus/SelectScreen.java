@@ -110,6 +110,8 @@ public class SelectScreen extends Screen {
 	public void mousePressed() {
 		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX, surface.mouseY));
 		if (done.contains(p) && p1 != null && p2 != null) { // go to gamescreen only if they have choosen
+			choice1 = -1;
+			choice2 = -1;
 			surface.switchScreen(ScreenSwitcher.SCREEN4);
 		}
 		for (int i = 0; i < options.length; i++) {
@@ -118,6 +120,7 @@ public class SelectScreen extends Screen {
 					choice1 = i;
 				else
 					choice2 = i;
+
 				if (choice1 == 0) {
 					screen.getGame().setP1(new Pikachu(1000, 1));
 				} else if (choice1 == 2) {
