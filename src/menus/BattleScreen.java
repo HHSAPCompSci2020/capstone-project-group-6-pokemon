@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 import game.*;
 import pokemon.*;
-import processing.core.PImage;
 
 /**
  * This represents a PApplet screen that is the game screen is.
@@ -32,10 +31,6 @@ public class BattleScreen extends Screen {
 	private String[] actionLabels;
 	private String dialogueText;
 
-	private PImage image;
-
-	private boolean turn = false;
-
 	// when false, it is player 1's turn, when true it is player 2's turn
 	/**
 	 * Constructs a screen with the given game on the provided PApplet surface
@@ -58,8 +53,8 @@ public class BattleScreen extends Screen {
 
 		// stats for each pokemon
 		stats[0] = new Rectangle(20, 400, 350, 120);
-		stats[1] = new Rectangle(350, 100, 350, 75);
-		health2 = new Rectangle(370, 120, 200, 10);
+		stats[1] = new Rectangle(430, 100, 350, 75);
+		health2 = new Rectangle(450, 120, 200, 10);
 		health1 = new Rectangle(40, 420, 200, 10);
 
 		// dialogue
@@ -134,8 +129,8 @@ public class BattleScreen extends Screen {
 		surface.text("HP: ", health2.x + health2.width + 20, health2.y);
 		surface.text(game.getp2().getHealth(), health2.x + health2.width + 50, health2.y);
 
-		surface.text("Other stats to be added", health1.x, health1.y + 30);
-		surface.text("Other stats to be added", health2.x, health2.y + 30);
+		surface.text("Player 1", health1.x, health1.y + 30);
+		surface.text("Player 2", health2.x, health2.y + 30);
 
 		surface.image(surface.loadImage("pikachu.png"), health1.x, health2.y + 70, 150, 180);
 
