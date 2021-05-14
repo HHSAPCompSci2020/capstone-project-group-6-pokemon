@@ -1,5 +1,6 @@
 package menus;
 
+import java.awt.Point;
 import java.awt.Rectangle;
 
 import game.*;
@@ -13,6 +14,8 @@ public class BattleScreen extends Screen{
 
 	private Rectangle[] actions = new Rectangle[4];
 	private Rectangle[] statTag = new Rectangle[2];
+	
+	private boolean[] clickState = new boolean[4];
 	
 	private Rectangle dialogue;
 	
@@ -32,6 +35,10 @@ public class BattleScreen extends Screen{
 		actions[1] = new Rectangle(430, 470, 170, 50); //bottom left
 		actions[2] = new Rectangle(610, 400, 170, 50); //top right
 		actions[3] = new Rectangle(610, 470, 170, 50); //bottom right
+		for(int i = 0; i<clickState.length; i++)
+		{
+			clickState[i] = false;
+		}
 		
 		//stats for each pokemon
 		statTag[0] = new Rectangle(20, 400, 350, 120);
@@ -75,7 +82,9 @@ public class BattleScreen extends Screen{
 		//adding text
 		for (int i = 0; i < actions.length; i++) {
 			float w = surface.textWidth(actionLabels[i]);
-			surface.text(actionLabels[i], actions[i].x + actions[i].width / 2 - w / 2, actions[i].y + actions[i].height / 2);
+			surface.text(actionLabels[i], 
+							actions[i].x + actions[i].width / 2 - w / 2, 
+							actions[i].y + actions[i].height / 2);
 
 		}
 		
@@ -84,7 +93,7 @@ public class BattleScreen extends Screen{
 	
 	public void mousePressed()
 	{
-		
+		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX, surface.mouseY));
 	}
 
 }
