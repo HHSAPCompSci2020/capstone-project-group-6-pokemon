@@ -43,6 +43,7 @@ public class BattleScreen extends Screen {
 		super(800, 600);
 		game = new Game(new Pokemon(), new Pokemon());
 		this.surface = surface;
+		this.screen = screen;
 		// actions
 		actions[0] = new Rectangle(430, 400, 170, 50); // top left
 		actions[1] = new Rectangle(430, 470, 170, 50); // bottom left
@@ -164,6 +165,7 @@ public class BattleScreen extends Screen {
 		surface.popStyle();
 		// reset if win
 		if (game.win() == 1 || game.win() == 2) {
+			screen.setWinner(game.win());
 			game.getp1().setHealth(100);
 			game.getp2().setHealth(100);
 			game.setTurn(0);
