@@ -32,7 +32,7 @@ public class Pokemon {
 
 	private boolean isProtected; // for move protect
 
-	protected ArrayList<String> moves;
+	protected String[] moves;
 
 	/**
 	 * Constructs a pokemon
@@ -235,7 +235,7 @@ public class Pokemon {
 	}
 	
 	public String getMoveName (int num) {
-		return moves.get(num);
+		return moves[num];
 	}
 
 }
