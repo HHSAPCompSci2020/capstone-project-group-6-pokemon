@@ -16,7 +16,6 @@ import pokemon.*;
 public class BattleScreen extends Screen {
 
 	private Game game;
-
 	private DrawingSurface surface;
 
 	private Rectangle[] actions = new Rectangle[3];
@@ -40,9 +39,9 @@ public class BattleScreen extends Screen {
 	 * @param surface the surface the screen will be drawn on
 	 * @param game    the that is going to be played
 	 */
-	public BattleScreen(DrawingSurface surface, Game game) {
+	public BattleScreen(DrawingSurface surface) {
 		super(800, 600);
-		this.game = game;
+		game = new Game(new Pokemon(), new Pokemon());
 		this.surface = surface;
 		// actions
 		actions[0] = new Rectangle(430, 400, 170, 50); // top left
@@ -64,10 +63,6 @@ public class BattleScreen extends Screen {
 
 		// text
 		actionLabels = new String[3];
-		actionLabels[0] = "Attack -15";
-		actionLabels[1] = "Heal 10";
-		actionLabels[2] = "Random Attack Chance";
-
 	}
 
 	/**
@@ -109,12 +104,15 @@ public class BattleScreen extends Screen {
 		surface.fill(0);
 
 		// adding text
-
 		// action button labels
 		for (int i = 0; i < actions.length; i++) {
-			float w = surface.textWidth(actionLabels[i]);
-			surface.text(actionLabels[i], actions[i].x + actions[i].width / 2 - w / 2,
-					actions[i].y + actions[i].height / 2);
+			String str = "";
+			if (game.getTurn() == 1)
+				str = game.getp1().getMoveName(i);
+			else
+				str = game.getp2().getMoveName(i);
+			float w = surface.textWidth(str);
+			surface.text(str, actions[i].x + actions[i].width / 2 - w / 2, actions[i].y + actions[i].height / 2);
 
 		}
 
@@ -224,7 +222,10 @@ public class BattleScreen extends Screen {
 				break;
 			}
 		}
+	}
 
+	public Game getGame() {
+		return game;
 	}
 
 }

@@ -27,14 +27,14 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 
 		MenuScreen screen1 = new MenuScreen(this);
 		screens.add(screen1);
-
-		SelectScreen screen2 = new SelectScreen(this);
+		BattleScreen screen4 = new BattleScreen(this);
+		
+		SelectScreen screen2 = new SelectScreen(this, screen4);
 		screens.add(screen2);
 
 		RuleScreen screen3 = new RuleScreen(this);
 		screens.add(screen3);
 
-		BattleScreen screen4 = new BattleScreen(this, screen2.getGame());
 		screens.add(screen4);
 
 		EndScreen screen5 = new EndScreen(this);
@@ -61,7 +61,7 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 			s.setup();
 	}
 
-	/** 
+	/**
 	 * Draws the active screen
 	 */
 	public void draw() {
@@ -84,9 +84,9 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 		activeScreen.mousePressed();
 	}
 
-
 	/**
 	 * This converts the actually coordinates into an assumed point
+	 * 
 	 * @param actual a point with (x,y)
 	 * @return the assumed conversion in point form
 	 */
@@ -94,7 +94,9 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 		return new Point((int) (actual.getX() / ratioX), (int) (actual.getY() / ratioY));
 	}
 
-	/**This switches the current screen.
+	/**
+	 * This switches the current screen.
+	 * 
 	 * @param i the index of the screen that will be switched with
 	 */
 	@Override

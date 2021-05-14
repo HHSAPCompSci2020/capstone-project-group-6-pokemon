@@ -23,6 +23,9 @@ public class Pikachu extends Pokemon {
 	public Pikachu(int health, int level) {
 		super('e', health, level);
 		setSpeedBase(60);
+		setMoveName(0, "Nuzzle");
+		setMoveName(1, "Protect");
+		setMoveName(2, "Agility");
 		/*
 		 * moves.add("Nuzzle"); moves.add("Protect"); moves.add("Agility");
 		 */
