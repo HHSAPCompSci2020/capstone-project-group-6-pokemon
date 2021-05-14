@@ -52,7 +52,7 @@ public class Game {
 
 		if (getTurn() == 1) {
 			if (p2.getProtect()) {
-				p1.toggleProtect();
+				p2.toggleProtect();
 
 			} else
 				p2.addHealth(p1.move(num)*(-1));
@@ -76,14 +76,14 @@ public class Game {
 //				p1.addHealth(p2.move(num) * -1);
 //		} else {
 //			if (p2.getProtect()) {
-//
+// 
 //			} else
 //				p2.addHealth(p2.move(num) * -1);
 //		}
 
 		//win();
 
-	}
+	} 
 	
 	public String getName(int pok, int num) {
 		if (pok == 1) {
