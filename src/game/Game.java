@@ -49,9 +49,17 @@ public class Game {
 	public void move() {
 
 		if (p1.getSpeedBase() > p2.getSpeedBase()) {
-			p2.addHealth(p1.move(1) * -1);
+			if (p2.getProtect()) {
+				
+			}
+			else
+				p2.addHealth(p1.move(1) * -1);
 		} else {
-			p1.addHealth(p2.move(1) * -1);
+			if (p1.getProtect()) {
+				
+			}
+			else 
+				p1.addHealth(p2.move(1) * -1);
 		}
 
 		win();
