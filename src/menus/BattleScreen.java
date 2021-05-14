@@ -16,6 +16,8 @@ public class BattleScreen extends Screen{
 	
 	private Rectangle dialogue;
 	
+	private String[] actionLabels;
+	
 	private boolean turn = false;
 	//when false, it is player 1's turn, when true it is player 2's turn
 	
@@ -37,6 +39,13 @@ public class BattleScreen extends Screen{
 		
 		//dialogue
 		dialogue = new Rectangle(50,540,700,50);
+		
+		//text
+		actionLabels = new String[4];
+		for(int i = 0; i<actionLabels.length; i++)
+		{
+			actionLabels[i] = "action";
+		}
 
 	}
 	
@@ -63,16 +72,9 @@ public class BattleScreen extends Screen{
 		
 		
 		//adding text
-		String[] actionLabels = new String[4];
-		for(int i = 0; i<actionLabels.length; i++)
-		{
-			actionLabels[i] = "action";
-		}
-		
 		for (int i = 0; i < actions.length; i++) {
-			String str = actionLabels[i];
-			float w = surface.textWidth(str);
-			surface.text(str, actions[i].x + actions[i].width / 2 - w / 2, actions[i].y + actions[i].height / 2);
+			float w = surface.textWidth(actionLabels[i]);
+			surface.text(actionLabels[i], actions[i].x + actions[i].width / 2 - w / 2, actions[i].y + actions[i].height / 2);
 
 		}
 		
