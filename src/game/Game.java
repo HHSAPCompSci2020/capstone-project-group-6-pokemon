@@ -37,6 +37,16 @@ public class Game {
 		turn++;
 		turn = turn % 2;
 	}
+	
+	public Pokemon getp1()
+	{
+		return p1;
+	}
+	
+	public Pokemon getp2()
+	{
+		return p2;
+	}
 
 	public int win() {
 		if (p1.getHealth() == 0)

@@ -19,6 +19,7 @@ public class BattleScreen extends Screen{
 	
 	private Rectangle dialogue;
 	private Rectangle health1;
+	private Rectangle health2;
 	
 	private String[] actionLabels;
 	private String dialogueText;
@@ -44,7 +45,8 @@ public class BattleScreen extends Screen{
 		//stats for each pokemon
 		stats[0] = new Rectangle(20, 400, 350, 120);
 		stats[1] = new Rectangle(350, 100, 350, 75);
-		health1 = new Rectangle(370,120,200,10);
+		health2 = new Rectangle(370,120,200,10);
+		health1 = new Rectangle(40,420,200,10);
 		
 		//dialogue
 		dialogue = new Rectangle(50,540,700,50);
@@ -84,8 +86,10 @@ public class BattleScreen extends Screen{
 		
 		surface.rect(dialogue.x, dialogue.y, dialogue.width, dialogue.height, 10, 10, 10, 10);
 		
+		//adding health bars
 		surface.fill(255, 0, 0);
 		surface.rect(health1.x, health1.y, health1.width, health1.height);
+		surface.rect(health2.x, health2.y, health2.width, health2.height);
 		
 		surface.fill(0);
 
@@ -107,7 +111,8 @@ public class BattleScreen extends Screen{
 		surface.text(dialogueText, dialogue.x + dialogue.width / 2 - dialogueTextWidth / 2, dialogue.y + dialogue.height / 2);
 		
 		//stats
-		
+		surface.text("HP: ", health1.x+health1.width+20, health1.y);
+		surface.text(game.getp1().getHealth(), health1.x+health1.width+50, health1.y);
 		
 		
 		
