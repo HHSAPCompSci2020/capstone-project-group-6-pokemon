@@ -85,7 +85,7 @@ public class BattleScreen extends Screen {
 		// adding shapes
 		surface.fill(82, 168, 72);
 		surface.rect(0, 300, 800, 300);
-		
+
 		surface.fill(212, 238, 252);
 		surface.rect(0, 0, 800, 300);
 		for (int i = 0; i < actions.length; i++) {
@@ -101,7 +101,8 @@ public class BattleScreen extends Screen {
 		}
 
 		surface.rect(dialogue.x, dialogue.y, dialogue.width, dialogue.height, 10, 10, 10, 10);
-
+		health1.width = game.getp1().getHealth() * 2;
+		health2.width = game.getp2().getHealth() * 2;
 		// adding health bars
 		surface.fill(255, 0, 0);
 		surface.rect(health1.x, health1.y, health1.width, health1.height);
@@ -127,10 +128,10 @@ public class BattleScreen extends Screen {
 
 		// stats
 		surface.text("HP: ", health1.x + health1.width + 20, health1.y);
-		surface.text("100/100" /* game.getp1().getHealth() */, health1.x + health1.width + 50, health1.y);
+		surface.text(game.getp1().getHealth(), health1.x + health1.width + 50, health1.y);
 
 		surface.text("HP: ", health2.x + health2.width + 20, health2.y);
-		surface.text("100/100" /* game.getp2().getHealth() */, health2.x + health2.width + 50, health2.y);
+		surface.text(game.getp2().getHealth(), health2.x + health2.width + 50, health2.y);
 
 		surface.text("Other stats to be added", health1.x, health1.y + 30);
 		surface.text("Other stats to be added", health2.x, health2.y + 30);
@@ -140,6 +141,13 @@ public class BattleScreen extends Screen {
 		surface.image(surface.loadImage("charmander.png"), health2.x + 200, health2.y + 70, 150, 180);
 
 		surface.popStyle();
+
+		if (game.win() == 1 || game.win() == 2) {
+			game.getp1().setHealth(100);
+			game.getp2().setHealth(100);
+			game.setTurn(0);
+			surface.switchScreen(ScreenSwitcher.SCREEN5);
+		}
 	}
 
 	/**
@@ -152,31 +160,35 @@ public class BattleScreen extends Screen {
 			clickState[i] = false;
 			if (actions[i].contains(p)) {
 				clickState[i] = !clickState[i];
-				/*
-				 * if (i == 0) { if (game.getTurn() == 0) game.getp2().addHealth(-10); else
-				 * game.getp1().addHealth(-10);
-				 * 
-				 * } if (i == 1) { if (game.getTurn() == 0) game.getp1().addHealth(10); else
-				 * game.getp2().addHealth(10);
-				 * 
-				 * } if (i == 2) { if (game.getTurn() == 0) game.getp2().addHealth((int)
-				 * (-Math.random() * 25)); else game.getp1().addHealth((int) (-Math.random() *
-				 * 25));
-				 * 
-				 * }
-				 */
-				// game.move(i);
+
+				if (i == 0) {
+					if (game.getTurn() != 1)
+						game.getp2().addHealth(-10);
+					else
+						game.getp1().addHealth(-10);
+
+				} else if (i == 1) {
+					if (game.getTurn() != 1)
+						game.getp1().addHealth(10);
+					else
+						game.getp2().addHealth(10);
+
+				} else if (i == 2) {
+					if (game.getTurn() != 1)
+						game.getp2().addHealth((int) (-Math.random() * 25));
+					else
+						game.getp1().addHealth((int) (-Math.random() * 25));
+
+				}
 				game.changeTurn();
-				// reset clickState for next player
+				
 				for (int j = 0; j < clickState.length; j++) {
 					clickState[i] = false;
 				}
 				break;
 			}
 		}
-		// if someone wins
-		// if (game.win() == 1 || game.win() == 2)
-		// surface.switchScreen(ScreenSwitcher.SCREEN5);
+
 	}
 
 }

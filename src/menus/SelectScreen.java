@@ -49,8 +49,8 @@ public class SelectScreen extends Screen {
 		options[9] = new Rectangle(550, 400, 200, 50);
 
 		done = new Rectangle(800 / 2 - 100, 600 / 2 + 150, 200, 100);
-		p1 = null;
-		p2 = null;
+		p1 = new Pokemon();
+		p2 = new Pokemon();
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class SelectScreen extends Screen {
 	 */
 	public void mousePressed() {
 		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX, surface.mouseY));
-		if (done.contains(p) /* && p1 != null && p2 != null */) { // go to gamescreen only if they have choosen
+		if (done.contains(p) && p1 != null && p2 != null ) { // go to gamescreen only if they have choosen
 			surface.switchScreen(ScreenSwitcher.SCREEN4);
 		}
 		for (int i = 0; i < options.length; i++) {
