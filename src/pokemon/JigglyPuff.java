@@ -39,7 +39,7 @@ public class JigglyPuff extends Pokemon {
 	 */
 	public int move(int num) {
 		if (num == 1) {
-			return (int) (25 * getAStat());
+			return (int) (10 * getAStat());
 		} else if (num == 2) {
 			setProtected(true);
 			return 0;

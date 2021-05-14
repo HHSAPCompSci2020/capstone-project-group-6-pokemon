@@ -182,20 +182,6 @@ public class BattleScreen extends Screen {
 			if (actions[i].contains(p)) {
 				clickState[i] = !clickState[i];
 				game.move(i);
-				
-				/*
-				 * if (i == 0) { if (game.getTurn() != 1) game.getp2().addHealth(-10); else
-				 * game.getp1().addHealth(-10);
-				 * 
-				 * } else if (i == 1) { if (game.getTurn() != 1) game.getp1().addHealth(10);
-				 * else game.getp2().addHealth(10);
-				 * 
-				 * } else if (i == 2) { if (game.getTurn() != 1) game.getp2().addHealth((int)
-				 * (-Math.random() * 25)); else game.getp1().addHealth((int) (-Math.random() *
-				 * 25));
-				 * 
-				 * }
-				 */
 				game.changeTurn();
 
 				for (int j = 0; j < clickState.length; j++) {
