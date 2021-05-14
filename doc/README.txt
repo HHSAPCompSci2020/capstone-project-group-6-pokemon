@@ -94,13 +94,13 @@ Credits:
       * Main
       * MenuScreen
       * RuleScreen
-      * GameScreen
       * DrawingSurface
       * ScreenSwitcher
       * Screen
       * SelectScreen
-      * Game
       * EndScreen
+      * BattleScreen (partial)
+      * Game (partial)
    * Isa
       * BattleScreen
       * Game
