@@ -50,13 +50,13 @@ public class Game {
 
 		if (p1.getSpeedBase() > p2.getSpeedBase()) {
 			if (p2.getProtect()) {
-				
+				p2.toggleProtect();
 			}
 			else
 				p2.addHealth(p1.move(1) * -1);
 		} else {
 			if (p1.getProtect()) {
-				
+				p1.toggleProtect();
 			}
 			else 
 				p1.addHealth(p2.move(1) * -1);
@@ -65,6 +65,8 @@ public class Game {
 		win();
 
 	}
+	
+	//public int ()
 
 	/**
 	 * This changes the turn from one pokemon to another

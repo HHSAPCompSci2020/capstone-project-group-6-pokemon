@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Pokemon {
 	private int health;
 
-	private double level;
+	protected double level;
 
 	private boolean isAlive;
 
@@ -137,6 +137,15 @@ public class Pokemon {
 	public double getSstat() {
 		return sStatM * speedBase;
 	}
+	
+	public boolean getProtect() {
+		return isProtected;
+		
+	}
+	
+	public void toggleProtect() {
+		this.isProtected = !isProtected; 
+	}
 
 	/**
 	 * This gets the speed base of the Pokemon
@@ -169,6 +178,7 @@ public class Pokemon {
 	public void setProtected(boolean isProtected) {
 		this.isProtected = isProtected;
 	}
+	
 
 	/**
 	 * This gets the maximum health of the Pokemon
@@ -222,6 +232,10 @@ public class Pokemon {
 	public int move(int num) {
 		return 0;
 
+	}
+	
+	public String getMoveName (int num) {
+		return moves.get(num);
 	}
 
 }
