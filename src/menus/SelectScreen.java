@@ -119,27 +119,27 @@ public class SelectScreen extends Screen {
 				else
 					choice2 = i;
 				if (choice1 == 0) {
-					screen.getGame().setP1(new Pikachu(100, 1));
-				} else if (choice1 == 1) {
-					screen.getGame().setP1(new JigglyPuff(100, 1));
+					screen.getGame().setP1(new Pikachu(1000, 1));
 				} else if (choice1 == 2) {
-					screen.getGame().setP1(new Bulbasaur(100, 1));
-				} else if (choice1 == 3) {
-					screen.getGame().setP1(new Charmander(100, 1));
+					screen.getGame().setP1(new JigglyPuff(1000, 1));
 				} else if (choice1 == 4) {
-					screen.getGame().setP1(new Squirtle(100, 1));
+					screen.getGame().setP1(new Bulbasaur(1000, 1));
+				} else if (choice1 == 6) {
+					screen.getGame().setP1(new Charmander(1000, 1));
+				} else if (choice1 == 8) {
+					screen.getGame().setP1(new Squirtle(1000, 1));
 				}
 
-				if (choice2 == 0) {
-					screen.getGame().setP2(new Pikachu(100, 1));
-				} else if (choice2 == 1) {
-					screen.getGame().setP2(new JigglyPuff(100, 1));
-				} else if (choice2 == 2) {
-					screen.getGame().setP2(new Bulbasaur(100, 1));
+				if (choice2 == 1) {
+					screen.getGame().setP2(new Pikachu(1000, 1));
 				} else if (choice2 == 3) {
-					screen.getGame().setP2(new Charmander(100, 1));
-				} else if (choice2 == 4) {
-					screen.getGame().setP2(new Squirtle(100, 1));
+					screen.getGame().setP2(new JigglyPuff(1000, 1));
+				} else if (choice2 == 5) {
+					screen.getGame().setP2(new Bulbasaur(1000, 1));
+				} else if (choice2 == 7) {
+					screen.getGame().setP2(new Charmander(1000, 1));
+				} else if (choice2 == 9) {
+					screen.getGame().setP2(new Squirtle(1000, 1));
 				}
 			}
 		}
