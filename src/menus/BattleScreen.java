@@ -83,12 +83,17 @@ public class BattleScreen extends Screen {
 		surface.noFill();
 
 		// adding shapes
+		surface.fill(82, 168, 72);
+		surface.rect(0, 300, 800, 300);
+		
+		surface.fill(212, 238, 252);
+		surface.rect(0, 0, 800, 300);
 		for (int i = 0; i < actions.length; i++) {
 			if (clickState[i]) {
 				surface.fill(100);
-			}
+			} else
+				surface.fill(255);
 			surface.rect(actions[i].x, actions[i].y, actions[i].width, actions[i].height, 10, 10, 10, 10);
-			surface.noFill();
 		}
 
 		for (int i = 0; i < stats.length; i++) {
@@ -170,8 +175,8 @@ public class BattleScreen extends Screen {
 			}
 		}
 		// if someone wins
-		//if (game.win() == 1 || game.win() == 2)
-			//surface.switchScreen(ScreenSwitcher.SCREEN5);
+		// if (game.win() == 1 || game.win() == 2)
+		// surface.switchScreen(ScreenSwitcher.SCREEN5);
 	}
 
 }

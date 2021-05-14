@@ -74,7 +74,7 @@ public class SelectScreen extends Screen {
 				surface.noFill();
 			surface.rect(options[i].x, options[i].y, options[i].width, options[i].height, 10, 10, 10, 10);
 		}
-
+		
 		surface.fill(0);
 
 		surface.text("Player 1: Select a Pokemon", 60, 50);
@@ -108,7 +108,7 @@ public class SelectScreen extends Screen {
 	 */
 	public void mousePressed() {
 		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX, surface.mouseY));
-		if (done.contains(p) /*&& p1 != null && p2 != null*/) { // go to gamescreen only if they have choosen
+		if (done.contains(p) /* && p1 != null && p2 != null */) { // go to gamescreen only if they have choosen
 			surface.switchScreen(ScreenSwitcher.SCREEN4);
 		}
 		for (int i = 0; i < options.length; i++) {
