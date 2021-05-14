@@ -66,21 +66,6 @@ public class Game {
 		
 		}
 		
-		changeTurn();
-//		if (p2.getSpeedBase() > p1.getSpeedBase()) {
-//			if (p1.getProtect()) {
-//
-//			} else
-//				p1.addHealth(p2.move(num) * -1);
-//		} else {
-//			if (p2.getProtect()) {
-//
-//			} else
-//				p2.addHealth(p2.move(num) * -1);
-//		}
-
-		win();
-
 	}
 	
 	public String getName(int pok, int num) {
