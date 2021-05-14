@@ -143,7 +143,6 @@ public class BattleScreen extends Screen {
 		} else if (game.getp1() instanceof Bulbasaur) {
 			player1 = "bulbasaur";
 		}
-		System.out.println(player1);
 		surface.image(surface.loadImage(player1 + ".png"), health1.x, health2.y + 70, 150, 180);
 
 		// player 2
