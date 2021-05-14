@@ -26,7 +26,7 @@ public class BattleScreen extends Screen {
 	private Rectangle dialogue;
 	private Rectangle health1;
 	private Rectangle health2;
-
+	private EndScreen screen;
 	private String[] actionLabels;
 	private String dialogueText;
 	private String player1 = "";
@@ -39,7 +39,7 @@ public class BattleScreen extends Screen {
 	 * @param surface the surface the screen will be drawn on
 	 * @param game    the that is going to be played
 	 */
-	public BattleScreen(DrawingSurface surface) {
+	public BattleScreen(DrawingSurface surface, EndScreen screen) {
 		super(800, 600);
 		game = new Game(new Pokemon(), new Pokemon());
 		this.surface = surface;
@@ -142,7 +142,7 @@ public class BattleScreen extends Screen {
 			player1 = "jigglypuff";
 		} else if (game.getp1() instanceof Bulbasaur) {
 			player1 = "bulbasaur";
-		} else if (game.getp1() instanceof Squirtle) {
+		} else {
 			player1 = "squirtle";
 		}
 		surface.image(surface.loadImage(player1 + ".png"), health1.x, health2.y + 70, 150, 180);
@@ -156,7 +156,7 @@ public class BattleScreen extends Screen {
 			player2 = "jigglypuff";
 		} else if (game.getp2() instanceof Bulbasaur) {
 			player2 = "bulbasaur";
-		} else if (game.getp2() instanceof Squirtle) {
+		} else{
 			player2 = "squirtle";
 		}
 		surface.image(surface.loadImage(player2 + ".png"), health2.x + 160, health2.y + 70, 150, 180);

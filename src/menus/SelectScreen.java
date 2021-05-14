@@ -97,7 +97,7 @@ public class SelectScreen extends Screen {
 
 		String str = "Done Choosing";
 		float w = surface.textWidth(str);
-		surface.text(str, done.x + done.width / 2 - w / 2, done.y + done.height / 2); 
+		surface.text(str, done.x + done.width / 2 - w / 2, done.y + done.height / 2);
 
 		surface.popStyle();
 
@@ -109,7 +109,8 @@ public class SelectScreen extends Screen {
 	 */
 	public void mousePressed() {
 		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX, surface.mouseY));
-		if (done.contains(p) && p1 != null && p2 != null) { // go to gamescreen only if they have choosen
+		if (done.contains(p) && p1 != null && p2 != null && choice1 != -1 && choice2 != -2) { // go to gamescreen only
+																								// if they have choosen
 			choice1 = -1;
 			choice2 = -1;
 			surface.switchScreen(ScreenSwitcher.SCREEN4);
