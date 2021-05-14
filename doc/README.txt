@@ -111,7 +111,6 @@ Credits:
          * Pikachu
          * Bulbasaur
          * Squirtle
-      * Game
 * Give credit to all outside resources used. This includes downloaded images or sounds, external java libraries, parent/tutor/student coding help, etc.]
    * Processing Screen Switching - Mr. Shelby
    * Controller Support library

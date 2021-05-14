@@ -13,7 +13,7 @@ public class BattleScreen extends Screen{
 
 	private DrawingSurface surface;
 
-	private Rectangle[] actions = new Rectangle[4];
+	private Rectangle[] actions = new Rectangle[3];
 	private Rectangle[] stats = new Rectangle[2];
 	
 	private boolean[] clickState = new boolean[4];
@@ -39,7 +39,7 @@ public class BattleScreen extends Screen{
 		actions[0] = new Rectangle(430, 400, 170, 50); //top left
 		actions[1] = new Rectangle(430, 470, 170, 50); //bottom left
 		actions[2] = new Rectangle(610, 400, 170, 50); //top right
-		actions[3] = new Rectangle(610, 470, 170, 50); //bottom right
+		//actions[3] = new Rectangle(610, 470, 170, 50); //bottom right
 		for(int i = 0; i<clickState.length; i++)
 		{
 			clickState[i] = false;
@@ -109,7 +109,7 @@ public class BattleScreen extends Screen{
 		}
 		
 		//dialogue box text
-		dialogueText = "dialogue";
+		dialogueText = "Player " + (game.getTurn() + 1) + " select a move";
 		float dialogueTextWidth = surface.textWidth(dialogueText);
 		surface.text(dialogueText, dialogue.x + dialogue.width / 2 - dialogueTextWidth / 2, dialogue.y + dialogue.height / 2);
 		

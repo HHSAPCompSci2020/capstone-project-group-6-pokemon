@@ -27,7 +27,7 @@ public class Game {
 //			}
 //			changeTurn();
 //		}
-		
+
 		if (turn == 0) {
 			p1.move(num);
 		}
@@ -37,14 +37,12 @@ public class Game {
 		turn++;
 		turn = turn % 2;
 	}
-	
-	public Pokemon getp1()
-	{
+
+	public Pokemon getp1() {
 		return p1;
 	}
-	
-	public Pokemon getp2()
-	{
+
+	public Pokemon getp2() {
 		return p2;
 	}
 
@@ -56,5 +54,9 @@ public class Game {
 		}
 
 		return 0;
+	}
+
+	public int getTurn() {
+		return turn;
 	}
 }

@@ -1,8 +1,5 @@
 package menus;
 
-/**
- * Author: Kelsey Shan
- */
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.*;
@@ -10,6 +7,12 @@ import java.awt.event.*;
 import game.Game;
 import pokemon.*;
 
+/**
+ * This represents a PApplet screen that can have user interactions. This is
+ * where the pokemon are selected
+ * 
+ * @author Kelsey Shan
+ */
 public class SelectScreen extends Screen {
 
 	private int x, y;
@@ -21,6 +24,11 @@ public class SelectScreen extends Screen {
 	private int choice1 = -1, choice2 = -1;
 	private Pokemon p1, p2;
 
+	/**
+	 * Constructs a select screen with a width of 800 and a height of 600. The
+	 * players can choose which pokemon they will fight with and their selection
+	 * will be indicated with the button having a different color.
+	 */
 	public SelectScreen(DrawingSurface surface) {
 		super(800, 600);
 		this.surface = surface;
@@ -45,6 +53,9 @@ public class SelectScreen extends Screen {
 		p2 = null;
 	}
 
+	/**
+	 * This draws the buttons and text on PApplet surface
+	 */
 	public void draw() {
 
 		// Draw stuff
@@ -91,6 +102,10 @@ public class SelectScreen extends Screen {
 
 	}
 
+	/**
+	 * Changes the PApplet screen when the mouse is pressed on certain buttons and
+	 * selects the Pokemon choosen if their button is pressed.
+	 */
 	public void mousePressed() {
 		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX, surface.mouseY));
 		if (done.contains(p)) { // got to gamescreen
@@ -119,7 +134,7 @@ public class SelectScreen extends Screen {
 			} else if (choice2 == 4) {
 				b = new Squirtle();
 			}
-			
+
 			p1 = a;
 			p2 = b;
 		}
@@ -133,6 +148,12 @@ public class SelectScreen extends Screen {
 		}
 	}
 
+	/**
+	 * This creates a game with the pokemon selected by the user with the PApplet
+	 * surface
+	 * 
+	 * @return a new Game with the pokemon selected
+	 */
 	public Game getGame() {
 		return new Game(p1, p2);
 	}
