@@ -97,7 +97,7 @@ public class SelectScreen extends Screen {
 
 		String str = "Done Choosing";
 		float w = surface.textWidth(str);
-		surface.text(str, done.x + done.width / 2 - w / 2, done.y + done.height / 2);
+		surface.text(str, done.x + done.width / 2 - w / 2, done.y + done.height / 2); 
 
 		surface.popStyle();
 

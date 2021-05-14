@@ -23,8 +23,8 @@ public class Squirtle extends Pokemon {
 	public Squirtle(int health, int level) {
 		super('g', health, level);
 		setSpeedBase(40);
-		setMoveName(0,"Water Gun");
-		setMoveName(1,"Protect");
+		setMoveName(1,"Water Gun");
+		setMoveName(0,"Protect");
 		setMoveName(2,"Calm Mind");
 	}
 
@@ -36,7 +36,7 @@ public class Squirtle extends Pokemon {
 	 */
 	public int move(int num) {
 		if (num == 1) {
-			return (int) (20 * getAStat());
+			return (int) (10 * getAStat());
 		} else if (num == 2) {
 			setProtected(true);
 			return 0;

@@ -23,8 +23,8 @@ public class Charmander extends Pokemon {
 	public Charmander(int health, int level) {
 		super('f', health, level);
 		setSpeedBase(30);
-		setMoveName(0,"Ember");
-		setMoveName(1,"Protect");
+		setMoveName(1,"Ember");
+		setMoveName(0,"Protect");
 		setMoveName(2,"Blaze");
 		/*
 		 * moves.add("Ember"); moves.add("Protect"); moves.add("Blaze");
@@ -39,7 +39,7 @@ public class Charmander extends Pokemon {
 	 */
 	public int move(int num) {
 		if (num == 1) {
-			return (int) (40 * getAStat());
+			return (int) (20 * getAStat());
 		} else if (num == 2) {
 			setProtected(true);
 			return 0;

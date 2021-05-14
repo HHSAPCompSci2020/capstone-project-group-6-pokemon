@@ -183,7 +183,6 @@ public class BattleScreen extends Screen {
 				clickState[i] = !clickState[i];
 				game.move(i);
 				
-
 				/*
 				 * if (i == 0) { if (game.getTurn() != 1) game.getp2().addHealth(-10); else
 				 * game.getp1().addHealth(-10);
