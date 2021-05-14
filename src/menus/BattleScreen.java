@@ -134,7 +134,7 @@ public class BattleScreen extends Screen {
 
 		
 		//player 1
-		/*
+		
 		if(game.getp1() instanceof Pikachu)
 		{
 			player1 = "pikachu";
@@ -166,10 +166,10 @@ public class BattleScreen extends Screen {
 			player2 = "bulbasaur";
 		}
 		surface.image(surface.loadImage(player2+".png"), health2.x + 200, health2.y + 70, 150, 180);
-		*/
 		
-		surface.image(surface.loadImage("pikachu.png"), health1.x, health2.y + 70, 150, 180);
-		surface.image(surface.loadImage("charmander.png"), health2.x + 200, health2.y + 70, 150, 180);
+		
+		//surface.image(surface.loadImage("pikachu.png"), health1.x, health2.y + 70, 150, 180);
+		//surface.image(surface.loadImage("charmander.png"), health2.x + 200, health2.y + 70, 150, 180);
 		surface.popStyle();
 
 		if (game.win() == 1 || game.win() == 2) {
