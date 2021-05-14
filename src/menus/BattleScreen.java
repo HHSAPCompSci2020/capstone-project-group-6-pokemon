@@ -26,12 +26,11 @@ public class BattleScreen extends Screen{
 	private boolean turn = false;
 	//when false, it is player 1's turn, when true it is player 2's turn
 	
-	public BattleScreen(DrawingSurface surface)
+	public BattleScreen(DrawingSurface surface, Game game)
 	{
 		super(800, 600);
-		game = new Game(null, null);
+		this.game = game;
 		this.surface = surface;
-		
 		//actions
 		actions[0] = new Rectangle(430, 400, 170, 50); //top left
 		actions[1] = new Rectangle(430, 470, 170, 50); //bottom left

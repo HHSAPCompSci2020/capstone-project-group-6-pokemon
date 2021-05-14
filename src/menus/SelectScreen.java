@@ -7,6 +7,7 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.*;
 
+import game.Game;
 import pokemon.*;
 
 public class SelectScreen extends Screen {
@@ -18,6 +19,7 @@ public class SelectScreen extends Screen {
 	private Rectangle[] options = new Rectangle[10];
 	private Rectangle done;
 	private int choice1 = -1, choice2 = -1;
+	private Pokemon p1, p2;
 
 	public SelectScreen(DrawingSurface surface) {
 		super(800, 600);
@@ -39,7 +41,8 @@ public class SelectScreen extends Screen {
 		options[9] = new Rectangle(550, 400, 200, 50);
 
 		done = new Rectangle(800 / 2 - 100, 600 / 2 + 150, 200, 100);
-
+		p1 = null;
+		p2 = null;
 	}
 
 	public void draw() {
@@ -92,7 +95,7 @@ public class SelectScreen extends Screen {
 		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX, surface.mouseY));
 		if (done.contains(p)) { // got to gamescreen
 			surface.switchScreen(ScreenSwitcher.SCREEN4);
-			Pokemon a, b;
+			Pokemon a = null, b = null;
 			if (choice1 == 0) {
 				a = new Pikachu();
 			} else if (choice1 == 1) {
@@ -104,7 +107,7 @@ public class SelectScreen extends Screen {
 			} else if (choice1 == 4) {
 				a = new Squirtle();
 			}
-			
+
 			if (choice2 == 0) {
 				b = new Pikachu();
 			} else if (choice2 == 1) {
@@ -116,6 +119,9 @@ public class SelectScreen extends Screen {
 			} else if (choice2 == 4) {
 				b = new Squirtle();
 			}
+			
+			p1 = a;
+			p2 = b;
 		}
 		for (int i = 0; i < options.length; i++) {
 			if (options[i].contains(p)) {
@@ -125,5 +131,9 @@ public class SelectScreen extends Screen {
 					choice2 = i;
 			}
 		}
+	}
+
+	public Game getGame() {
+		return new Game(p1, p2);
 	}
 }
