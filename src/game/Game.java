@@ -50,23 +50,19 @@ public class Game {
 
 		if (p1.getSpeedBase() > p2.getSpeedBase()) {
 			if (p2.getProtect()) {
-				p2.toggleProtect();
-			}
-			else
+
+			} else
 				p2.addHealth(p1.move(1) * -1);
 		} else {
 			if (p1.getProtect()) {
-				p1.toggleProtect();
-			}
-			else 
+
+			} else
 				p1.addHealth(p2.move(1) * -1);
 		}
 
 		win();
 
 	}
-	
-	//public int ()
 
 	/**
 	 * This changes the turn from one pokemon to another
@@ -104,9 +100,9 @@ public class Game {
 	 *         and 0 if neither win
 	 */
 	public int win() {
-		if (p1.getHealth() == 0)
+		if (p1.getHealth() <= 0)
 			return 2; // player 1's pokemon dies
-		else if (p2.getHealth() == 0) {
+		else if (p2.getHealth() <= 0) {
 			return 1; // player 2's pokemon dies
 		}
 
@@ -121,5 +117,9 @@ public class Game {
 	 */
 	public int getTurn() {
 		return turn + 1;
+	}
+
+	public void setTurn(int in) {
+		turn = in;
 	}
 }
