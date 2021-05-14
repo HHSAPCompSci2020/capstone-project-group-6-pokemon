@@ -5,7 +5,6 @@ import java.awt.Rectangle;
 
 import game.*;
 import pokemon.*;
-import processing.core.PImage;
 
 /**
  * This represents a PApplet screen that is the game screen is.
@@ -30,10 +29,6 @@ public class BattleScreen extends Screen {
 
 	private String[] actionLabels;
 	private String dialogueText;
-
-	private PImage image;
-
-	private boolean turn = false;
 
 	// when false, it is player 1's turn, when true it is player 2's turn
 	/**
