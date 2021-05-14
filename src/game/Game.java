@@ -48,20 +48,25 @@ public class Game {
 	/**
 	 * This makes a move in the game
 	 */
-	public void move(ArrayList<Integer> moveToUse) {
+	public void move(int num) {
 
-		if (p1.getSpeedBase() > p2.getSpeedBase()) {
+		if (getTurn() == 1) {
 			if (p2.getProtect()) {
 
 			} else
-				p2.addHealth(p1.move(moveToUse.get(0)) * (0-1));
-		} else {
+				p2.addHealth(p1.move(num)*(-1));
+		}
+		
+		else {
+		
 			if (p1.getProtect()) {
 
 			} else
-				p1.addHealth(p2.move(moveToUse.get(1)) * -1);
+				p1.addHealth(p2.move(num)*(-1));
+		
 		}
 		
+		changeTurn();
 //		if (p2.getSpeedBase() > p1.getSpeedBase()) {
 //			if (p1.getProtect()) {
 //

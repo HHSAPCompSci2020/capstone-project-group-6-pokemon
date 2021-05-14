@@ -51,7 +51,11 @@ public class RuleScreen extends Screen {
 		surface.textSize(20);
 
 		surface.text("Rules:", 10, 50);
-
+  
+		
+		
+		
+		
 		surface.text("First choose your starter pokemon to fight with", 10, 75);
 		surface.text("Each pokemon has its own moves which can be used during fights", 10, 95);
 		surface.text("During a fight, players will alternate turns and make one move per turn", 10, 115);

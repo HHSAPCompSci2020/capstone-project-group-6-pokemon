@@ -181,13 +181,7 @@ public class BattleScreen extends Screen {
 			clickState[i] = false;
 			if (actions[i].contains(p)) {
 				clickState[i] = !clickState[i];
-				moveToUse.add(i);
-				
-					if (moveToUse.size() >= 2) {
-						game.move(moveToUse);
-						moveToUse.remove(0);
-						moveToUse.remove(0);
-					}
+				game.move(i);
 				
 
 				/*
