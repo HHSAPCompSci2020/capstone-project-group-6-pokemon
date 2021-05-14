@@ -142,6 +142,8 @@ public class BattleScreen extends Screen {
 			player1 = "jigglypuff";
 		} else if (game.getp1() instanceof Bulbasaur) {
 			player1 = "bulbasaur";
+		} else if (game.getp1() instanceof Squirtle) {
+			player1 = "bulbasaur";
 		}
 		surface.image(surface.loadImage(player1 + ".png"), health1.x, health2.y + 70, 150, 180);
 
@@ -153,6 +155,8 @@ public class BattleScreen extends Screen {
 		} else if (game.getp2() instanceof JigglyPuff) {
 			player2 = "jigglypuff";
 		} else if (game.getp2() instanceof Bulbasaur) {
+			player2 = "bulbasaur";
+		} else if (game.getp2() instanceof Squirtle) {
 			player2 = "bulbasaur";
 		}
 		surface.image(surface.loadImage(player2 + ".png"), health2.x + 200, health2.y + 70, 150, 180);
