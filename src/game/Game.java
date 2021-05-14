@@ -77,6 +77,15 @@ public class Game {
 		win();
 
 	}
+	
+	public String getName(int pok, int num) {
+		if (pok == 1) {
+			return p1.getMoveName(num);
+		}
+		else  {
+			return p2.getMoveName(num);
+		}
+	}
 
 	/**
 	 * This changes the turn from one pokemon to another
