@@ -4,6 +4,7 @@ import java.awt.Point;
 import java.awt.Rectangle;
 
 import game.*;
+import pokemon.*;
 import processing.core.PImage;
 
 /**
@@ -64,10 +65,10 @@ public class BattleScreen extends Screen {
 		dialogue = new Rectangle(50, 540, 700, 50);
 
 		// text
-		actionLabels = new String[4];
-		for (int i = 0; i < actionLabels.length; i++) {
-			actionLabels[i] = "action";
-		}
+		actionLabels = new String[3];
+		actionLabels[0] = "Attack -15";
+		actionLabels[1] = "Heal 10";
+		actionLabels[2] = "Random Attack Chance";
 
 	}
 
@@ -130,6 +131,7 @@ public class BattleScreen extends Screen {
 		surface.text("Other stats to be added", health2.x, health2.y + 30);
 
 		surface.image(surface.loadImage("pikachu.png"), health1.x, health2.y + 70, 150, 180);
+
 		surface.image(surface.loadImage("charmander.png"), health2.x + 200, health2.y + 70, 150, 180);
 
 		surface.popStyle();
@@ -145,6 +147,19 @@ public class BattleScreen extends Screen {
 			clickState[i] = false;
 			if (actions[i].contains(p)) {
 				clickState[i] = !clickState[i];
+				/*
+				 * if (i == 0) { if (game.getTurn() == 0) game.getp2().addHealth(-10); else
+				 * game.getp1().addHealth(-10);
+				 * 
+				 * } if (i == 1) { if (game.getTurn() == 0) game.getp1().addHealth(10); else
+				 * game.getp2().addHealth(10);
+				 * 
+				 * } if (i == 2) { if (game.getTurn() == 0) game.getp2().addHealth((int)
+				 * (-Math.random() * 25)); else game.getp1().addHealth((int) (-Math.random() *
+				 * 25));
+				 * 
+				 * }
+				 */
 				// game.move(i);
 				game.changeTurn();
 				// reset clickState for next player
@@ -154,6 +169,9 @@ public class BattleScreen extends Screen {
 				break;
 			}
 		}
+		// if someone wins
+		//if (game.win() == 1 || game.win() == 2)
+			//surface.switchScreen(ScreenSwitcher.SCREEN5);
 	}
 
 }

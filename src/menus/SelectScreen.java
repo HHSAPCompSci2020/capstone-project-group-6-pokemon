@@ -108,35 +108,8 @@ public class SelectScreen extends Screen {
 	 */
 	public void mousePressed() {
 		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX, surface.mouseY));
-		if (done.contains(p)) { // got to gamescreen
+		if (done.contains(p) /*&& p1 != null && p2 != null*/) { // go to gamescreen only if they have choosen
 			surface.switchScreen(ScreenSwitcher.SCREEN4);
-			Pokemon a = null, b = null;
-			if (choice1 == 0) {
-				a = new Pikachu();
-			} else if (choice1 == 1) {
-				a = new JigglyPuff();
-			} else if (choice1 == 2) {
-				a = new Bulbasaur();
-			} else if (choice1 == 3) {
-				a = new Charmander();
-			} else if (choice1 == 4) {
-				a = new Squirtle();
-			}
-
-			if (choice2 == 0) {
-				b = new Pikachu();
-			} else if (choice2 == 1) {
-				b = new JigglyPuff();
-			} else if (choice2 == 2) {
-				b = new Bulbasaur();
-			} else if (choice2 == 3) {
-				b = new Charmander();
-			} else if (choice2 == 4) {
-				b = new Squirtle();
-			}
-
-			p1 = a;
-			p2 = b;
 		}
 		for (int i = 0; i < options.length; i++) {
 			if (options[i].contains(p)) {
@@ -144,8 +117,32 @@ public class SelectScreen extends Screen {
 					choice1 = i;
 				else
 					choice2 = i;
+				if (choice1 == 0) {
+					p1 = new Pikachu(100, 1);
+				} else if (choice1 == 1) {
+					p1 = new JigglyPuff(100, 1);
+				} else if (choice1 == 2) {
+					p1 = new Bulbasaur(100, 1);
+				} else if (choice1 == 3) {
+					p1 = new Charmander(100, 1);
+				} else if (choice1 == 4) {
+					p1 = new Squirtle(100, 1);
+				}
+
+				if (choice2 == 0) {
+					p2 = new Pikachu(100, 1);
+				} else if (choice2 == 1) {
+					p2 = new JigglyPuff(100, 1);
+				} else if (choice2 == 2) {
+					p2 = new Bulbasaur(100, 1);
+				} else if (choice2 == 3) {
+					p2 = new Charmander(100, 1);
+				} else if (choice2 == 4) {
+					p2 = new Squirtle(100, 1);
+				}
 			}
 		}
+
 	}
 
 	/**
@@ -154,6 +151,7 @@ public class SelectScreen extends Screen {
 	 * 
 	 * @return a new Game with the pokemon selected
 	 */
+
 	public Game getGame() {
 		return new Game(p1, p2);
 	}
