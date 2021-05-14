@@ -70,10 +70,10 @@ public class Pokemon {
 		this.level = level;
 
 		aStatN = 2;
-		aStatM = (aStatN / 2) * (level / 10);
+		aStatM = (aStatN / 2) ;
 
 		sStatN = 2;
-		sStatM = sStatN / 2 * (level / 10);
+		sStatM = sStatN / 2;
 		moves[0] = "attack";
 		moves[1] = "heal";
 		moves[2] = "random";
@@ -159,7 +159,7 @@ public class Pokemon {
 	 * @return the speed base of the Pokemon
 	 */
 	public int getSpeedBase() {
-		return speedBase;
+		return speedBase; 
 	}
 
 	public void setSpeedBase(int speedBase) {

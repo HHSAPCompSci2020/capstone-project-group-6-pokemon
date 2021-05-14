@@ -54,7 +54,7 @@ public class Game {
 			if (p2.getProtect()) {
 
 			} else
-				p2.addHealth(p1.move(moveToUse.get(0)) * -1);
+				p2.addHealth(p1.move(moveToUse.get(0)) * (0-1));
 		} else {
 			if (p1.getProtect()) {
 
