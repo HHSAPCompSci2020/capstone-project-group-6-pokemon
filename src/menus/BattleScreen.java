@@ -16,7 +16,6 @@ import pokemon.*;
 public class BattleScreen extends Screen {
 
 	private Game game;
-	SelectScreen screen;
 	private DrawingSurface surface;
 
 	private Rectangle[] actions = new Rectangle[3];
@@ -40,7 +39,6 @@ public class BattleScreen extends Screen {
 	 */
 	public BattleScreen(DrawingSurface surface) {
 		super(800, 600);
-		this.screen = screen;
 		game = new Game(new Pokemon(), new Pokemon());
 		this.surface = surface;
 		// actions
