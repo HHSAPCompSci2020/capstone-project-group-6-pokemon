@@ -99,8 +99,8 @@ Credits:
       * Screen
       * SelectScreen
       * EndScreen
-      * BattleScreen (partial)
-      * Game (partial)
+      * BattleScreen
+      * Game
    * Isa
       * BattleScreen
       * Game
