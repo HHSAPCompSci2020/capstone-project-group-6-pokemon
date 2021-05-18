@@ -39,7 +39,7 @@ public class Bulbasaur extends Pokemon {
 	 */
 	public int move(int num) {
 		if (num == 1) {
-			return (int) (10 * getAStat());
+			return (int) (15 * getAStat());
 		} else if (num == 2) {
 			setProtected(true);
 			return 0;

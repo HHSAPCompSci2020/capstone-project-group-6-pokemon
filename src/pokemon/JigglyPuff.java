@@ -24,7 +24,7 @@ public class JigglyPuff extends Pokemon {
 		super('n', health, level);
 		setSpeedBase(10);
 		setMoveName(1, "Rollout");
-		setMoveName(2, "Protect");
+		setMoveName(2, "Protect"); 
 		setMoveName(0, "Recover");
 		/*
 		 * moves.add("Rollout"); moves.add("Protect"); moves.add("Recover");
@@ -39,7 +39,7 @@ public class JigglyPuff extends Pokemon {
 	 */
 	public int move(int num) {
 		if (num == 1) {
-			return (int) (10 * getAStat());
+			return (int) (15 * getAStat()); 
 		} else if (num == 2) {
 			setProtected(true);
 			return 0;
