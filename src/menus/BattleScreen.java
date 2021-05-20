@@ -4,10 +4,6 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 
-import processing.core.PApplet;
-import processing.core.PConstants;
-import processing.sound.SoundFile;
-
 import game.*;
 import pokemon.*;
 
@@ -23,11 +19,7 @@ public class BattleScreen extends Screen {
 	private DrawingSurface surface;
 
 	private Rectangle soundToggle;
-	private String[] soundFileNames;
-	private SoundFile[] sounds;
 	private String soundText;
-	private int loadIndex;
-	private int currentPlaying;
 
 	private Rectangle[] actions = new Rectangle[3];
 	private Rectangle[] stats = new Rectangle[2];
@@ -77,12 +69,9 @@ public class BattleScreen extends Screen {
 		actionLabels = new String[3];
 
 		// music
-		soundFileNames = new String[] { "audio/music.mp3" };
-		sounds = new SoundFile[soundFileNames.length];
+
 		soundToggle = new Rectangle(10, 10, 60, 50);
 		soundText = "no music";
-		loadIndex = 0;
-		currentPlaying = -1;
 
 	}
 
@@ -202,15 +191,12 @@ public class BattleScreen extends Screen {
 	 */
 	public void mousePressed() {
 		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX, surface.mouseY));
-		if (soundToggle.contains(p) && loadIndex >= sounds.length) {
-			if (currentPlaying >= 0) {
-				sounds[currentPlaying].stop();
+		if (soundToggle.contains(p)) {
+			if (soundText.equals("music")) {
 				soundText = "no music";
-				currentPlaying = -1;
+				surface.toggleSound();
 			} else {
-				sounds[0].cue(0);
-				sounds[0].play();
-				currentPlaying = 0;
+				surface.toggleSound();
 				soundText = "music";
 			}
 
@@ -238,11 +224,5 @@ public class BattleScreen extends Screen {
 	 */
 	public Game getGame() {
 		return game;
-	}
-
-	public void loadNextSong() {
-		for (loadIndex = 0; loadIndex < soundFileNames.length; loadIndex++) {
-			sounds[loadIndex] = new SoundFile(this, soundFileNames[loadIndex]);
-		}
 	}
 }

@@ -4,6 +4,9 @@ import java.awt.Point;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
+import processing.core.PApplet;
+import processing.core.PConstants;
+import processing.sound.SoundFile;
 
 /**
  * This represents a PApplet drawing surface.
@@ -18,6 +21,11 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 	private Screen activeScreen;
 	private ArrayList<Screen> screens;
 
+	private int loadIndex;
+	private int currentPlaying;
+	private SoundFile[] sounds;
+	private String[] soundFileNames;
+
 	/**
 	 * This constructs a PApplet surface
 	 */
@@ -27,7 +35,7 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 
 		MenuScreen screen1 = new MenuScreen(this);
 		screens.add(screen1);
-		
+
 		EndScreen screen5 = new EndScreen(this);
 		BattleScreen screen4 = new BattleScreen(this, screen5);
 
@@ -42,6 +50,14 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 		screens.add(screen5);
 
 		activeScreen = screens.get(0);
+
+		loadIndex = 0;
+
+		currentPlaying = -1;
+
+		soundFileNames = new String[] {"audio/music.mp3"};
+
+		sounds = new SoundFile[soundFileNames.length];
 
 	}
 
@@ -60,6 +76,7 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 		surface.setResizable(true);
 		for (Screen s : screens)
 			s.setup();
+		thread("loadNextSong");
 	}
 
 	/**
@@ -105,4 +122,21 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 		activeScreen = screens.get(i);
 	}
 
+	public void loadNextSong() {
+		for (loadIndex = 0; loadIndex < soundFileNames.length; loadIndex++) {
+			sounds[loadIndex] = new SoundFile(this, soundFileNames[loadIndex]);
+		}
+	}
+
+	public void toggleSound() {
+		if (currentPlaying == 0) {
+			sounds[currentPlaying].stop();
+			currentPlaying = -1;
+		}
+		else {
+			sounds[0].cue(0);
+			sounds[0].play();
+			currentPlaying = 0;
+		}
+	}
 }
