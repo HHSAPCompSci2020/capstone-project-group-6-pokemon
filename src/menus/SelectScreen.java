@@ -6,6 +6,7 @@ import java.awt.event.*;
 
 import game.Game;
 import pokemon.*;
+import processing.core.PImage;
 
 /**
  * This represents a PApplet screen that can have user interactions. This is
@@ -67,15 +68,17 @@ public class SelectScreen extends Screen {
 		surface.pushStyle();
 
 		surface.background(255); // Clear the screen with a white background
+		PImage img = surface.loadImage("images/background.png");
+		surface.image(img,-80,0, img.width/2, img.height/2);
 		surface.stroke(0); // Set line drawing color to white
-		surface.noFill();
+		surface.fill(255);
 
 		surface.rect(done.x, done.y, done.width, done.height, 10, 10, 10, 10);
 		for (int i = 0; i < options.length; i++) {
 			if (choice1 == i || choice2 == i) {
 				surface.fill(100);
 			} else
-				surface.noFill();
+				surface.fill(255);
 			surface.rect(options[i].x, options[i].y, options[i].width, options[i].height, 10, 10, 10, 10);
 		}
 

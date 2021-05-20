@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import game.*;
 import pokemon.*;
+import processing.core.PImage;
 
 /**
  * This represents a PApplet screen that is the game screen is.
@@ -82,15 +83,16 @@ public class BattleScreen extends Screen {
 		surface.pushStyle();
 
 		surface.background(255);
+		
+		PImage img = surface.loadImage("images/fighting_background.jpg");
+		surface.image(img,-170,-60, (float)(img.width*1.3), (float)(img.height*1.3));
+		
+		
 		surface.stroke(0);
-		surface.noFill();
+		surface.fill(255);
 
 		// adding shapes
-		surface.fill(82, 168, 72);
-		surface.rect(0, 300, 800, 300);
-
-		surface.fill(212, 238, 252);
-		surface.rect(0, 0, 800, 300);
+		
 		for (int i = 0; i < actions.length; i++) {
 			if (clickState[i]) {
 				surface.fill(100);
