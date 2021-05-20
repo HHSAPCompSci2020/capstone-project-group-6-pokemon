@@ -217,6 +217,8 @@ public class Pokemon {
 	 */
 	public void addHealth(int add) {
 		this.health += add;
+		if (this.health < 0)
+			this.health = 0;
 	}
 
 	/**
@@ -226,6 +228,8 @@ public class Pokemon {
 	 */
 	public void setHealth(int health) {
 		this.health = health;
+		if (this.health < 0)
+			this.health = 0;
 	}
 
 	/**
@@ -258,8 +262,9 @@ public class Pokemon {
 
 	/**
 	 * This sets the name of a move
+	 * 
 	 * @param num the index that will be set with the name
-	 * @param s the name
+	 * @param s   the name
 	 */
 	public void setMoveName(int num, String s) {
 		moves[num] = s;

@@ -3,6 +3,8 @@ package menus;
 import java.awt.Point;
 import java.awt.Rectangle;
 
+import processing.core.PImage;
+
 /**
  * This represents a PApplet screen that is the ending screen for the game.
  * 
@@ -26,7 +28,7 @@ public class EndScreen extends Screen {
 		winner = "";
 		button = new Rectangle(800 / 2 - 100, 600 / 2 - 150, 200, 100);
 		button2 = new Rectangle(800 / 2 - 100, 600 / 2 + 100, 200, 100);
-		win = new Rectangle(800 / 2 - 100, 600 / 2 - 250, 200, 100);
+		win = new Rectangle(800 / 2 - 250, 600 / 2 - 275, 500, 50);
 	}
 
 	/**
@@ -38,7 +40,13 @@ public class EndScreen extends Screen {
 
 		surface.background(255, 255, 255);
 
+		PImage img = surface.loadImage("images/end_screen.gif");
+		surface.image(img,0,0, img.width, img.height);
+		
+		surface.fill(255);
+		
 		surface.rect(button.x, button.y, button.width, button.height, 10, 10, 10, 10);
+		surface.rect(win.x, win.y, win.width, win.height, 10, 10, 10, 10);
 		surface.rect(button2.x, button2.y, button2.width, button2.height, 10, 10, 10, 10);
 		surface.fill(0);
 		String str = "Main Menu";

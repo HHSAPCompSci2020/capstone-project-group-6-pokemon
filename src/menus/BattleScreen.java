@@ -184,6 +184,8 @@ public class BattleScreen extends Screen {
 			game.getp1().setHealth(100);
 			game.getp2().setHealth(100);
 			game.setTurn(0);
+			if (soundText.equals("music"))
+				surface.toggleSound();
 			surface.switchScreen(ScreenSwitcher.SCREEN5);
 		}
 	}
