@@ -3,6 +3,8 @@ package menus;
 import java.awt.Point;
 import java.awt.Rectangle;
 
+import processing.core.PImage;
+
 /**
  * This represents a PApplet screen that is the menu starting screen for the
  * game.
@@ -11,7 +13,6 @@ import java.awt.Rectangle;
  *
  */
 public class MenuScreen extends Screen {
-
 	private DrawingSurface surface;
 
 	private Rectangle button, button2;
@@ -35,11 +36,11 @@ public class MenuScreen extends Screen {
 	 * This draws the buttons and text on PApplet surface
 	 */
 	public void draw() {
-
 		surface.pushStyle();
 
-		surface.background(255, 255, 255);
-
+		surface.background(255);
+		PImage img = surface.loadImage("images/background.png");
+		surface.image(img,-80,0, img.width/2, img.height/2);
 		surface.rect(button.x, button.y, button.width, button.height, 10, 10, 10, 10);
 		surface.rect(button2.x, button2.y, button2.width, button2.height, 10, 10, 10, 10);
 		surface.fill(0);
@@ -49,7 +50,7 @@ public class MenuScreen extends Screen {
 		String str2 = "Rules";
 		float v = surface.textWidth(str2);
 		surface.text(str2, button2.x + button2.width / 2 - v / 2, button2.y + button2.height / 2);
-
+		
 		surface.popStyle();
 	}
 

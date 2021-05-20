@@ -4,6 +4,10 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.ArrayList;
 
+import processing.core.PApplet;
+import processing.core.PConstants;
+import processing.sound.SoundFile;
+
 import game.*;
 import pokemon.*;
 
@@ -17,6 +21,13 @@ public class BattleScreen extends Screen {
 
 	private Game game;
 	private DrawingSurface surface;
+
+	private Rectangle soundToggle;
+	private String[] soundFileNames;
+	private SoundFile[] sounds;
+	private String soundText;
+	private int loadIndex;
+	private int currentPlaying;
 
 	private Rectangle[] actions = new Rectangle[3];
 	private Rectangle[] stats = new Rectangle[2];
@@ -64,6 +75,15 @@ public class BattleScreen extends Screen {
 
 		// text
 		actionLabels = new String[3];
+
+		// music
+		soundFileNames = new String[] { "audio/music.mp3" };
+		sounds = new SoundFile[soundFileNames.length];
+		soundToggle = new Rectangle(10, 10, 60, 50);
+		soundText = "no music";
+		loadIndex = 0;
+		currentPlaying = -1;
+
 	}
 
 	/**
@@ -94,6 +114,8 @@ public class BattleScreen extends Screen {
 			surface.rect(stats[i].x, stats[i].y, stats[i].width, stats[i].height, 10, 10, 10, 10);
 		}
 
+		surface.rect(soundToggle.x, soundToggle.y, soundToggle.width, soundToggle.height, 10, 10, 10, 10);
+
 		surface.rect(dialogue.x, dialogue.y, dialogue.width, dialogue.height, 10, 10, 10, 10);
 		health1.width = game.getp1().getHealth() * 2;
 		health2.width = game.getp2().getHealth() * 2;
@@ -101,10 +123,12 @@ public class BattleScreen extends Screen {
 		surface.fill(255, 0, 0);
 		surface.rect(health1.x, health1.y, health1.width, health1.height);
 		surface.rect(health2.x, health2.y, health2.width, health2.height);
-
 		surface.fill(0);
 
 		// adding text
+		float j = surface.textWidth(soundText);
+		surface.text(soundText, soundToggle.x + soundToggle.width / 2 - j / 2, soundToggle.y + soundToggle.height / 2);
+
 		// action button labels
 		for (int i = 0; i < actions.length; i++) {
 			String str = "";
@@ -146,7 +170,7 @@ public class BattleScreen extends Screen {
 		} else {
 			player1 = "squirtle";
 		}
-		surface.image(surface.loadImage(player1 + ".png"), health1.x, health2.y + 70, 150, 180);
+		surface.image(surface.loadImage("images/" + player1 + ".png"), health1.x, health2.y + 70, 150, 180);
 
 		// player 2
 		if (game.getp2() instanceof Pikachu) {
@@ -160,7 +184,7 @@ public class BattleScreen extends Screen {
 		} else {
 			player2 = "squirtle";
 		}
-		surface.image(surface.loadImage(player2 + ".png"), health2.x + 160, health2.y + 70, 150, 180);
+		surface.image(surface.loadImage("images/" + player2 + ".png"), health2.x + 160, health2.y + 70, 150, 180);
 
 		surface.popStyle();
 		// reset if win
@@ -178,6 +202,19 @@ public class BattleScreen extends Screen {
 	 */
 	public void mousePressed() {
 		Point p = surface.actualCoordinatesToAssumed(new Point(surface.mouseX, surface.mouseY));
+		if (soundToggle.contains(p) && loadIndex >= sounds.length) {
+			if (currentPlaying >= 0) {
+				sounds[currentPlaying].stop();
+				soundText = "no music";
+				currentPlaying = -1;
+			} else {
+				sounds[0].cue(0);
+				sounds[0].play();
+				currentPlaying = 0;
+				soundText = "music";
+			}
+
+		}
 		ArrayList<Integer> moveToUse = new ArrayList<Integer>();
 		for (int i = 0; i < clickState.length; i++) {
 			clickState[i] = false;
@@ -203,4 +240,9 @@ public class BattleScreen extends Screen {
 		return game;
 	}
 
+	public void loadNextSong() {
+		for (loadIndex = 0; loadIndex < soundFileNames.length; loadIndex++) {
+			sounds[loadIndex] = new SoundFile(this, soundFileNames[loadIndex]);
+		}
+	}
 }
