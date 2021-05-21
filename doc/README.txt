@@ -1,6 +1,6 @@
 ﻿Pokemon Fighting
 Authors: Isa Pudiyapura, Rishi Zamvar, Kelsey Shan
-Revision: 5/13/21 [put last modified date here.]
+Revision: 5/20/2021 
 
 
 Introduction: 
@@ -16,55 +16,49 @@ In this turn based multiplayer pokemon game, players take turns attacking their 
 
 
 Instructions:
-[Explain how to use the program. This needs to be specific: 
-Which keyboard keys will do what? 
-Where will you need to click? 
-Will you have menus that need to be navigated? What will they look like? 
-Do actions need to be taken in a certain order?]
-
-
 1. The game opens up on a main menu with two buttons: Instructions and Play. The instructions button will open a list with the rules to play the game. 
 2. When the players decide to play, they will be brought to a screen with two columns of Pokemon buttons containing all 5 possible pokemon. The player will use the mouse to select a pokemon to join their team by clicking the buttons with the pokemon’s name. 
-3. After both players have choses a team, they will click the “Done Choosing” button.
-4. They will be taken to that battle screen with the different moves of the Pokemon they have selected and the health.
-5. The players will also have access to a panel of buttons labeled with the attacks possible. 
-6. The fight will alternate between players and allow them to select moves when it is their turn. There are a variety of different moves including attacks and protecting oneself.
-7. A player loses once the pokemon that is currently deployed loses all its HP.
-8. Once someone loses, you are brought to the ending screen. The winner will be displayed on the screen. There will also be buttons to “Main Menu” and “Fight Again”. “Fight again” will take the player back to the fighting screen with the platforms and they will be able to fight again. “Main Menu” sends them back to the starting screen.
+3. After both players have choses a team member, they will click the “Done Choosing” button. They are unable to continue if they do not choose.
+4. They will be taken to that battle screen with the different moves of the Pokemon they have selected and the health. 
+5. The players will also have access to a panel of buttons labeled with the attacks possible. When the turn switches, the names of the moves change to the next player
+6. There is also a music button located in the top left corner of the battle screen. Players can choose to play music or not while playing the game by toggling the button.
+7. The fight will alternate between players and allow them to select moves when it is their turn. There are a variety of different moves including attacks and protecting oneself.
+8. A player loses once the pokemon that is currently deployed loses all its HP.
+9. Once someone loses, you are brought to the ending screen. The winner will be displayed on the screen. There will also be buttons to “Main Menu” and “Fight Again”. “Fight again” will take the player back to the fighting screen with the platforms and they will be able to fight again. “Main Menu” sends them back to the starting screen.
 **Click on the ‘X’ button on the top right hand corner to exit the game. 
 
 
 Features List (THE ONLY SECTION THAT CANNOT CHANGE LATER):
 Must-have Features:
-[These are features that we agree you will definitely have by the project due date. A good final project would have all of these completed. At least 5 are required. Each feature should be fully described (at least a few full sentences for each)]
-* Menu that includes instructions and how to play the game
-* Players can win or lose battles by defeating(die/kill) an opponent's pokemon
-* Two players can play on the same computer
-* 5 pokemon with different attake values, HP, and attributes. There will be different attack values low, middle, high. HP and other attributes will have a starting value which increases as the pokemon levels up. When a pokemon defeats another, it increases a scaling factor that will be used as a multiplier for the HP and attack attributes.
-* Simple 2-Dimensional graphics. The pokemon will be image icons and the background set up will be composed of basic shapes
+* [DONE] Menu that includes instructions and how to play the game
+* [DONE] Players can win or lose battles by defeating(die/kill) an opponent's pokemon
+* [DONE] Two players can play on the same computer
+* [DONE] 5 pokemon with different attake values, HP, and attributes. There will be different attack values low, middle, high. HP and other attributes will have a starting value which increases as the pokemon levels up. When a pokemon defeats another, it increases a scaling factor that will be used as a multiplier for the HP and attack attributes.
+* [DONE] Simple 2-Dimensional graphics. The pokemon will be image icons and the background set up will be composed of basic shapes
 
 
 Want-to-have Features:
-[These are features that you would like to have by the project due date, but you’re unsure whether you’ll hit all of them. A good final project would have perhaps half of these completed. At least 5 are required. Again, fully describe each.]
-* A Xbox controller input in addition to keyboard input
+* A Xbox controller input in addition to mouse input
 * A customizable 3 pokemon team that allows you to switch between pokemon in battle
 * Story mode feature with developed plot.
-* Networked play
-* 3D Graphics include more complex images and icons
-* Animations - The pokemons shake a little when attacked.
+* [To-do] Networked play
+* [To-do] 3D Graphics or include more complex images and icons
+* [To-do] Animations - The pokemons shake a little when attacked.
+* [DONE] Background music - Music can be played in the background of a fight
 
 
 Stretch Features:
-[These are features that we agree a fully complete version of this program would have, but that you probably will not have time to implement. A good final project does not necessarily need to have any of these completed at all. At least 3 are required. Again, fully describe each.]
 * A map that we are able to traverse with different locations that have different graphics
 * Sprites for not only pokemon but also player and other npc’s
 * Individual theme music for different fights
 
 
+Video Link:
+https://www.youtube.com/watch?v=aFmyVKjU_hU 
+UML Diagram: https://drive.google.com/file/d/1ik9_l0lyTkFh7xmhQdR7jG4W_QqNKYoa/view?usp=sharing 
 
 
 Class List:
-UML Diagram: https://drive.google.com/file/d/1ik9_l0lyTkFh7xmhQdR7jG4W_QqNKYoa/view?usp=sharing 
 * Pokemon Package
    * Pokemon.java: Each pokemon has an “element” and their effectiveness to fight varies depending on the element of their opponent (i.e water would be strong when fighting fire). Each pokemon has fields which track the health and the 3 different attacks a pokemon can do.
       * Pikachu.java (extends)
@@ -87,10 +81,11 @@ UML Diagram: https://drive.google.com/file/d/1ik9_l0lyTkFh7xmhQdR7jG4W_QqNKYoa/v
 Credits:
 [Gives credit for project components. This includes both internal credit (your group members) and external credit (other people, websites, libraries). To do this:
 * List the group members and describe how each member contributed to the completion of the final program. This could be classes written, art assets created, leadership/organizational skills exercises, or other tasks. Initially, this is how you plan on splitting the work.
- Classes Written:
+* Completed Parts
    * Kelsey
-      * UML diagrams
-      * Read me
+      * UML diagrams updater
+      * README updater
+      * Javadocs updater
       * Main
       * MenuScreen
       * RuleScreen
@@ -98,9 +93,13 @@ Credits:
       * ScreenSwitcher
       * Screen
       * SelectScreen
+      * Game
       * EndScreen
       * BattleScreen
       * Game
+      * Music - Want to have feature
+      * Created and edited the presentation
+      * Organized our work schedule
    * Isa
       * BattleScreen
       * Game
@@ -111,8 +110,16 @@ Credits:
          * Pikachu
          * Bulbasaur
          * Squirtle
-* Give credit to all outside resources used. This includes downloaded images or sounds, external java libraries, parent/tutor/student coding help, etc.]
+      * Game
+* Uncompleted parts that are in progress
+   * Isa
+      * 3D graphics - Want to have feature
+      * Animations - Want to have feature
+   * Rishi
+      * Networking  - Want to have feature
+* Outside Resources
    * Processing Screen Switching - Mr. Shelby
+   * Processing Sounds - Mr. Shelby
    * Controller Support library
       * https://github.com/williamahartman/Jamepad
    * Pokemon images
@@ -124,4 +131,13 @@ Credits:
          * https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngfind.com%2Fmpng%2FiRJiho_bulbasaur-png-image-with-transparent-background-bulbasaur-sprite%2F&psig=AOvVaw1sacsxfs--LsHCo6vQREN7&ust=1620839995827000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCODo8ZCSwvACFQAAAAAdAAAAABAD
       * jiggly puff
          * https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngaaa.com%2Fdetail%2F3980771&psig=AOvVaw2xfH1nRSxRqu38mnaMPB2r&ust=1620840074789000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNCB6PqRwvACFQAAAAAdAAAAABAD 
-         
+      * Squirtle
+         * https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngkey.com%2Fmaxpic%2Fu2e6y3i1e6o0a9t4%2F&psig=AOvVaw262OfgfqdGdCy2uqzyFz0y&ust=1621099685143000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPiJxo7ZyfACFQAAAAAdAAAAABAE
+      * Background
+         * https://wallpaperaccess.com/full/1089608.png 
+      * Battle Music
+         * https://www.youtube.com/watch?v=L5wyctbkgGk 
+      * Fighting Background
+         * https://i.pinimg.com/originals/20/fe/1e/20fe1e143ea1bb175a2035b1d180e398.jpg 
+      * End Screen Background
+         * https://www.google.com/url?sa=i&url=https%3A%2F%2Ftolunaygenc.artstation.com%2Fprojects%2FxzXw2X%3Falbum_id%3D2663024&psig=AOvVaw3t2Sr0iYb3qs96QRmWYIIa&ust=1621576660163000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPDU1_7J1_ACFQAAAAAdAAAAABAn
