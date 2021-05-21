@@ -18,6 +18,11 @@ public class BattleScreen extends Screen {
 
 	private Game game;
 	private DrawingSurface surface;
+	
+	private int p1PrevHealth;
+	private int p2PrevHealth;
+	private int p1shakeState;
+	private int p2shakeState;
 
 	private Rectangle soundToggle;
 	private String soundText;
@@ -31,7 +36,6 @@ public class BattleScreen extends Screen {
 	private Rectangle health1;
 	private Rectangle health2;
 	private EndScreen screen;
-	private String[] actionLabels;
 	private String dialogueText;
 	private String player1 = "";
 	private String player2 = "";
@@ -66,13 +70,15 @@ public class BattleScreen extends Screen {
 		// dialogue
 		dialogue = new Rectangle(50, 540, 700, 50);
 
-		// text
-		actionLabels = new String[3];
-
 		// music
 
 		soundToggle = new Rectangle(10, 10, 60, 50);
 		soundText = "no music";
+		
+		p1PrevHealth = game.getp1().getHealth();
+		p2PrevHealth = game.getp2().getHealth();
+		p1shakeState = 0;
+		p2shakeState = 0;
 
 	}
 
@@ -147,6 +153,8 @@ public class BattleScreen extends Screen {
 
 		surface.text("Player 1", health1.x, health1.y + 30);
 		surface.text("Player 2", health2.x, health2.y + 30);
+		
+		surface.noStroke();
 
 		// player 1
 
@@ -161,7 +169,7 @@ public class BattleScreen extends Screen {
 		} else {
 			player1 = "squirtle";
 		}
-		surface.image(surface.loadImage("images/" + player1 + ".png"), health1.x, health2.y + 70, 150, 180);
+		
 
 		// player 2
 		if (game.getp2() instanceof Pikachu) {
@@ -175,7 +183,60 @@ public class BattleScreen extends Screen {
 		} else {
 			player2 = "squirtle";
 		}
-		surface.image(surface.loadImage("images/" + player2 + ".png"), health2.x + 160, health2.y + 70, 150, 180);
+		
+		switch (p1shakeState)
+		{
+			case 0:
+				surface.image(surface.loadImage("images/" + player1 + ".png"), health1.x, health2.y + 70, 150, 180);
+				break;
+			case 1:
+				surface.image(surface.loadImage("images/" + player1 + ".png"), health1.x-30, health2.y + 70, 150, 180);
+				try {
+					Thread.sleep(200);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				p1shakeState = 2;
+				break;
+			case 2:
+				surface.image(surface.loadImage("images/" + player1 + ".png"), health1.x+30, health2.y + 70, 150, 180);
+				try {
+					Thread.sleep(200);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				p1shakeState = 0;
+				break;
+		}
+		
+		switch (p2shakeState)
+		{
+			case 0:
+				surface.image(surface.loadImage("images/" + player2 + ".png"), health2.x + 160, health2.y + 70, 150, 180);
+				break;
+			case 1:
+				surface.image(surface.loadImage("images/" + player2 + ".png"), health2.x + 130, health2.y + 70, 150, 180);
+				try {
+					Thread.sleep(200);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				p2shakeState = 2;
+				break;
+			case 2:
+				surface.image(surface.loadImage("images/" + player2 + ".png"), health2.x + 190, health2.y + 70, 150, 180);
+				try {
+					Thread.sleep(200);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				p2shakeState = 0;
+				break;
+		}
 
 		surface.popStyle();
 		// reset if win
@@ -212,6 +273,17 @@ public class BattleScreen extends Screen {
 			if (actions[i].contains(p)) {
 				clickState[i] = !clickState[i];
 				game.move(i);
+				
+				if(game.getp1().getHealth()<p1PrevHealth)
+				{
+					p1shakeState = 1;
+				}
+				if(game.getp2().getHealth()<p2PrevHealth)
+				{
+					p2shakeState = 1;
+				}
+				p1PrevHealth = game.getp1().getHealth();
+				p2PrevHealth = game.getp2().getHealth();
 				game.changeTurn();
 
 				for (int j = 0; j < clickState.length; j++) {
