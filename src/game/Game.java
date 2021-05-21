@@ -71,6 +71,12 @@ public class Game {
 		}
 	}
 
+	/**
+	 * This gets the move name of the pokemon
+	 * @param pok The index of the pokemon that currently has the turn
+	 * @param num The index of the move name
+	 * @return the name of the move selected
+	 */
 	public String getName(int pok, int num) {
 		if (pok == 1) {
 			return p1.getMoveName(num);
@@ -134,6 +140,10 @@ public class Game {
 		return turn + 1;
 	}
 
+	/**
+	 * This sets which player currently has the turn
+	 * @param in the player who will have the turn. 0 represents player 1 and 1 represents player 2.
+	 */
 	public void setTurn(int in) {
 		turn = in;
 	}

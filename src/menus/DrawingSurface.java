@@ -122,12 +122,18 @@ public class DrawingSurface extends PApplet implements ScreenSwitcher {
 		activeScreen = screens.get(i);
 	}
 
+	/**
+	 * This loads the next song to be played
+	 */
 	public void loadNextSong() {
 		for (loadIndex = 0; loadIndex < soundFileNames.length; loadIndex++) {
 			sounds[loadIndex] = new SoundFile(this, soundFileNames[loadIndex]);
 		}
 	}
 
+	/**
+	 * This changes the sound from on to off or vice versa.
+	 */
 	public void toggleSound() {
 		if (currentPlaying == 0) {
 			sounds[currentPlaying].stop();
