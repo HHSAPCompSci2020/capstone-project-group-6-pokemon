@@ -1,6 +1,6 @@
 ﻿Pokemon Fighting
 Authors: Isa Pudiyapura, Rishi Zamvar, Kelsey Shan
-Revision: 5/24/2021 
+Revision: 5/25/2021 
 
 
 Introduction: 
