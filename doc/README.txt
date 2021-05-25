@@ -41,9 +41,9 @@ Want-to-have Features:
 * A Xbox controller input in addition to mouse input
 * A customizable 3 pokemon team that allows you to switch between pokemon in battle
 * Story mode feature with developed plot.
-* [To-do] Networked play
+* [To-do] Animated moves
 * [To-do] 3D Graphics or include more complex images and icons
-* [To-do] Animations - The pokemons shake a little when attacked.
+* [DONE] Animations - The pokemons shake a little when attacked.
 * [DONE] Background music - Music can be played in the background of a fight
 
 
@@ -103,6 +103,7 @@ Credits:
    * Isa
       * BattleScreen
       * Game
+      * Animated pokemon
    * Rishi
       * Pokemon
          * Charmander
@@ -111,12 +112,14 @@ Credits:
          * Bulbasaur
          * Squirtle
       * Game
+      * BattleScreen
+      * Animated Moves
 * Uncompleted parts that are in progress
    * Isa
       * 3D graphics - Want to have feature
       * Animations - Want to have feature
    * Rishi
-      * Networking  - Want to have feature
+      * Animated Moves  - Want to have feature
 * Outside Resources
    * Processing Screen Switching - Mr. Shelby
    * Processing Sounds - Mr. Shelby
