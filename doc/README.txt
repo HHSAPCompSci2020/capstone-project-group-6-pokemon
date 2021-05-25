@@ -52,13 +52,8 @@ Want-to-have Features:
 * A Xbox controller input in addition to mouse input
 * A customizable 3 pokemon team that allows you to switch between pokemon in battle
 * Story mode feature with developed plot.
-<<<<<<< Updated upstream
 * Networked play
 * 3D Graphics or include more complex images and icons
-=======
-* [DONE] Animated moves
-* [To-do] 3D Graphics or include more complex images and icons
->>>>>>> Stashed changes
 * [DONE] Animations - The pokemons shake a little when attacked.
 * [DONE] Background music - Music can be played in the background of a fight
 
@@ -122,15 +117,8 @@ Credits:
          * Bulbasaur
          * Squirtle
       * Game
-<<<<<<< Updated upstream
       * Animations - Want to have feature
-=======
       * BattleScreen
-      * Animated Moves
-* Uncompleted parts that are in progress
-
-
->>>>>>> Stashed changes
 * Outside Resources
    * Processing Screen Switching - Mr. Shelby
    * Processing Sounds - Mr. Shelby
@@ -152,7 +140,6 @@ Credits:
       * Fighting Background
          * https://i.pinimg.com/originals/20/fe/1e/20fe1e143ea1bb175a2035b1d180e398.jpg 
       * End Screen Background
-<<<<<<< Updated upstream
          * https://www.google.com/url?sa=i&url=https%3A%2F%2Ftolunaygenc.artstation.com%2Fprojects%2FxzXw2X%3Falbum_id%3D2663024&psig=AOvVaw3t2Sr0iYb3qs96QRmWYIIa&ust=1621576660163000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPDU1_7J1_ACFQAAAAAdAAAAABAn 
       * Electric Logo
          * https://www.google.com/url?sa=i&url=https%3A%2F%2Ftoppng.com%2Fpokemon-electric-type-stickers-by-cat-games-inc-electric-energy-pokemon-symbol-PNG-free-PNG-Images_205861&psig=AOvVaw2-yeJYBeR4nfUm6un-nTgI&ust=1621986481264000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKie_NPA4_ACFQAAAAAdAAAAABAK
@@ -164,18 +151,6 @@ Credits:
          * https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.deviantart.com%2Fhumac1%2Fart%2FColorless-Energy-303829662&psig=AOvVaw0zV8MW1lZ9DBXsBB1-yO70&ust=1621986611452000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJiYp5HB4_ACFQAAAAAdAAAAABBC
       * Grass
          * https://www.google.com/url?sa=i&url=https%3A%2F%2Fpokemonenglish.fandom.com%2Fwiki%2FGrass_Type&psig=AOvVaw3gIIaLKaM2PtWR4YEPdvg1&ust=1621986701781000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKD85bvB4_ACFQAAAAAdAAAAABAD
-=======
-         * https://www.google.com/url?sa=i&url=https%3A%2F%2Ftolunaygenc.artstation.com%2Fprojects%2FxzXw2X%3Falbum_id%3D2663024&psig=AOvVaw3t2Sr0iYb3qs96QRmWYIIa&ust=1621576660163000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPDU1_7J1_ACFQAAAAAdAAAAABAn
-      * Fire move emblem
-      	*
-      * Grass move emblem
-      	*https://www.google.com/url?sa=i&url=https%3A%2F%2Fpokemonenglish.fandom.com%2Fwiki%2FGrass_Type&psig=AOvVaw3gIIaLKaM2PtWR4YEPdvg1&ust=1621986701781000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKD85bvB4_ACFQAAAAAdAAAAABAD
-      * Normal move emblem
-      	*https://www.deviantart.com/humac1/art/Colorless-Energy-303829662
-      * Electric move emblem
-      	*https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg/1024px-Pok%C3%A9mon_Electric_Type_Icon.svg.png
-      * Water move emblem
-      	*https://www.pinterest.com/pin/451697037608959177/
       * Protect move emblem
       	*https://cdn2.iconfinder.com/data/icons/flat-icons-19/512/Shield.png
->>>>>>> Stashed changes
+
