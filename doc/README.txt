@@ -1,18 +1,29 @@
 ﻿Pokemon Fighting
 Authors: Isa Pudiyapura, Rishi Zamvar, Kelsey Shan
-Revision: 5/20/2021 
+Revision: 5/24/2021 
 
 
 Introduction: 
 
 
-In the year 3000, a swarm of never before seen animal species breached the earth’s atmosphere through a tear in the time-space continuum. As more research was done on the peculiar creatures, we have discovered a way to befriend and adopt them. Before long, a new sport where pokemon-trainer duos could duel was created: Pokemon Fighting. 
+In the year 3000, a swarm of never before seen animal species breached the earth’s 
+atmosphere through a tear in the time-space continuum. As more research was done on the 
+peculiar creatures, we have discovered a way to befriend and adopt them. Before long, a new 
+sport where pokemon-trainer duos could duel was created: Pokemon Fighting. 
 
 
-You have finally turned the ripe age of 10 and have begun to set out on the greatest adventure of your life. While many children applied to become a trainer, you are one of the chosen few who will learn to be a pokemon trainer because of your perseverance, mental disciple, and innate ability. With only a handful of starting pokemon, you set off to create an invincible team and become the greatest trainer of all time.
+You have finally turned the ripe age of 10 and have begun to set out on the greatest adventure 
+of your life. While many children applied to become a trainer, you are one of the chosen few 
+who will learn to be a pokemon trainer because of your perseverance, mental disciple, and 
+innate ability. With only a handful of starting pokemon, you set off to create an invincible team 
+and become the greatest trainer of all time.
 
 
-In this turn based multiplayer pokemon game, players take turns attacking their opponent and battling to determine a winner. Each battle you win will help level up your pokemon and make you stronger. In battle, you face off with one opponent and are allowed one pokemon out. Battles follow a tag-team style, and your choice of pokemon can be strategically switched out based on attributes or health. 
+In this turn based multiplayer pokemon game, players take turns attacking their opponent and 
+battling to determine a winner. Each battle you win will help level up your pokemon and make 
+you stronger. In battle, you face off with one opponent and are allowed one pokemon out. 
+Battles follow a tag-team style, and your choice of pokemon can be strategically switched out 
+based on attributes or health. 
 
 
 Instructions:
@@ -28,7 +39,7 @@ Instructions:
 **Click on the ‘X’ button on the top right hand corner to exit the game. 
 
 
-Features List (THE ONLY SECTION THAT CANNOT CHANGE LATER):
+Features List:
 Must-have Features:
 * [DONE] Menu that includes instructions and how to play the game
 * [DONE] Players can win or lose battles by defeating(die/kill) an opponent's pokemon
@@ -41,8 +52,8 @@ Want-to-have Features:
 * A Xbox controller input in addition to mouse input
 * A customizable 3 pokemon team that allows you to switch between pokemon in battle
 * Story mode feature with developed plot.
-* [To-do] Animated moves
-* [To-do] 3D Graphics or include more complex images and icons
+* Networked play
+* 3D Graphics or include more complex images and icons
 * [DONE] Animations - The pokemons shake a little when attacked.
 * [DONE] Background music - Music can be played in the background of a fight
 
@@ -51,11 +62,6 @@ Stretch Features:
 * A map that we are able to traverse with different locations that have different graphics
 * Sprites for not only pokemon but also player and other npc’s
 * Individual theme music for different fights
-
-
-Video Link:
-https://www.youtube.com/watch?v=aFmyVKjU_hU 
-UML Diagram: https://drive.google.com/file/d/1ik9_l0lyTkFh7xmhQdR7jG4W_QqNKYoa/view?usp=sharing 
 
 
 Class List:
@@ -81,8 +87,7 @@ Class List:
 Credits:
 [Gives credit for project components. This includes both internal credit (your group members) and external credit (other people, websites, libraries). To do this:
 * List the group members and describe how each member contributed to the completion of the final program. This could be classes written, art assets created, leadership/organizational skills exercises, or other tasks. Initially, this is how you plan on splitting the work.
-* Completed Parts
-   * Kelsey
+* Kelsey
       * UML diagrams updater
       * README updater
       * Javadocs updater
@@ -100,11 +105,11 @@ Credits:
       * Music - Want to have feature
       * Created and edited the presentation
       * Organized our work schedule
-   * Isa
+* Isa
       * BattleScreen
       * Game
-      * Animated pokemon
-   * Rishi
+      * Animations - Want to have feature
+* Rishi
       * Pokemon
          * Charmander
          * JigglyPuff
@@ -112,20 +117,11 @@ Credits:
          * Bulbasaur
          * Squirtle
       * Game
-      * BattleScreen
-      * Animated Moves
-* Uncompleted parts that are in progress
-   * Isa
-      * 3D graphics - Want to have feature
       * Animations - Want to have feature
-   * Rishi
-      * Animated Moves  - Want to have feature
 * Outside Resources
    * Processing Screen Switching - Mr. Shelby
    * Processing Sounds - Mr. Shelby
-   * Controller Support library
-      * https://github.com/williamahartman/Jamepad
-   * Pokemon images
+   * Game Images and Sounds
       * charmander
          * https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinclipart.com%2Fpindetail%2Fowwboi_pokemon-fire-red-charmander-sprite-clipart%2F&psig=AOvVaw2hR1k18PhDaPVy3lHDoQ8P&ust=1620839867962000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNiZn5eRwvACFQAAAAAdAAAAABAD
       * pikachu
@@ -143,4 +139,14 @@ Credits:
       * Fighting Background
          * https://i.pinimg.com/originals/20/fe/1e/20fe1e143ea1bb175a2035b1d180e398.jpg 
       * End Screen Background
-         * https://www.google.com/url?sa=i&url=https%3A%2F%2Ftolunaygenc.artstation.com%2Fprojects%2FxzXw2X%3Falbum_id%3D2663024&psig=AOvVaw3t2Sr0iYb3qs96QRmWYIIa&ust=1621576660163000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPDU1_7J1_ACFQAAAAAdAAAAABAn
+         * https://www.google.com/url?sa=i&url=https%3A%2F%2Ftolunaygenc.artstation.com%2Fprojects%2FxzXw2X%3Falbum_id%3D2663024&psig=AOvVaw3t2Sr0iYb3qs96QRmWYIIa&ust=1621576660163000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPDU1_7J1_ACFQAAAAAdAAAAABAn 
+      * Electric Logo
+         * https://www.google.com/url?sa=i&url=https%3A%2F%2Ftoppng.com%2Fpokemon-electric-type-stickers-by-cat-games-inc-electric-energy-pokemon-symbol-PNG-free-PNG-Images_205861&psig=AOvVaw2-yeJYBeR4nfUm6un-nTgI&ust=1621986481264000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKie_NPA4_ACFQAAAAAdAAAAABAK
+      * Fire
+         * https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.clipartmax.com%2Fmiddle%2Fm2i8G6N4m2A0H7N4_fire-type-pokemon-symbol-pokemon-fire-type-logo%2F&psig=AOvVaw2W-1dB_q5a0eoBPkCE9hAt&ust=1621986541966000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIDC2O_A4_ACFQAAAAAdAAAAABAD
+      * Water
+         * https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F451697037608959177%2F&psig=AOvVaw16YR03j_rWLaV3Lp9Apnnv&ust=1621986576855000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIi72ILB4_ACFQAAAAAdAAAAABAD
+      * Normal
+         * https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.deviantart.com%2Fhumac1%2Fart%2FColorless-Energy-303829662&psig=AOvVaw0zV8MW1lZ9DBXsBB1-yO70&ust=1621986611452000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJiYp5HB4_ACFQAAAAAdAAAAABBC
+      * Grass
+         * https://www.google.com/url?sa=i&url=https%3A%2F%2Fpokemonenglish.fandom.com%2Fwiki%2FGrass_Type&psig=AOvVaw3gIIaLKaM2PtWR4YEPdvg1&ust=1621986701781000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKD85bvB4_ACFQAAAAAdAAAAABAD

@@ -18,13 +18,13 @@ public class BattleScreen extends Screen {
 
 	private Game game;
 	private DrawingSurface surface;
-	
+
 	private int p1PrevHealth;
 	private int p2PrevHealth;
 	private int p1shakeState;
 	private int p2shakeState;
-	private int p1moveState; 
-	private int p2moveState; 
+	private int p1moveState;
+	private int p2moveState;
 
 	private Rectangle soundToggle;
 	private String soundText;
@@ -78,13 +78,13 @@ public class BattleScreen extends Screen {
 
 		soundToggle = new Rectangle(10, 10, 60, 50);
 		soundText = "no music";
-		
+
 		p1PrevHealth = game.getp1().getHealth();
 		p2PrevHealth = game.getp2().getHealth();
 		p1shakeState = 0;
 		p2shakeState = 0;
-		p1moveState = 0; 
-		p2moveState = 0; 
+		p1moveState = 0;
+		p2moveState = 0;
 
 	}
 
@@ -95,16 +95,15 @@ public class BattleScreen extends Screen {
 		surface.pushStyle();
 
 		surface.background(255);
-		
+
 		PImage img = surface.loadImage("images/fighting_background.jpg");
-		surface.image(img,-170,-60, (float)(img.width*1.3), (float)(img.height*1.3));
-		
-		
+		surface.image(img, -170, -60, (float) (img.width * 1.3), (float) (img.height * 1.3));
+
 		surface.stroke(0);
 		surface.fill(255);
 
 		// adding shapes
-		
+
 		for (int i = 0; i < actions.length; i++) {
 			if (clickState[i]) {
 				surface.fill(100);
@@ -159,7 +158,7 @@ public class BattleScreen extends Screen {
 
 		surface.text("Player 1", health1.x, health1.y + 30);
 		surface.text("Player 2", health2.x, health2.y + 30);
-		
+
 		surface.noStroke();
 
 		// player 1
@@ -180,7 +179,6 @@ public class BattleScreen extends Screen {
 			player1 = "squirtle";
 			move1 = "water";
 		}
-		
 
 		// player 2
 		if (game.getp2() instanceof Pikachu) {
@@ -199,289 +197,209 @@ public class BattleScreen extends Screen {
 			player2 = "squirtle";
 			move2 = "water";
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-//		switch (p2moveState)
-//		{
-//			case 0:
-//				//surface.image(surface.loadImage("images/" + move1 + ".png"), health1.x, health2.y + 70, 150, 180);
-//				break;
-//			case 1:
-//				
-//				for (int i = 0; i< 5; i++ ) {
-//					surface.image(surface.loadImage("images/"+move1+".png"), health1.x+30+i*100, health2.y + 70, 150, 180);
-//					try {
-//						Thread.sleep(200);
-//					} catch (InterruptedException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//				}
-//				p1moveState = 2;
-//				break;
-//			case 2:
-//				p1moveState = 0;
-//				break;
-//		}
-//		
-//		switch (p1moveState)
-//		{
-//			case 0:
-//				//surface.image(surface.loadImage("images/" + move2 + ".png"), health2.x + 160, health2.y + 70, 150, 180);
-//				break;
-//			case 1:
-//				for (int i = 0; i< 5; i++ ) {
-//					surface.image(surface.loadImage("images/"+move2+".png"), health2.x + 100 - i*100, health2.y + 70, 150, 180);
-//					
-//					try {
-//						Thread.sleep(200);
-//					} catch (InterruptedException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//					
-//				}
-//				p2moveState = 2;
-//				break;
-//			case 2:
-//				p2moveState = 0; 
-//				break;
-//		}
-		
-		
-		if (game.getp1().getProtect()) {
-			surface.image(surface.loadImage("images/protect.png"), health1.x+100, health2.y + 70, 150, 180);
-		}
-		
-		if (game.getp2().getProtect()) {
-			surface.image(surface.loadImage("images/protect.png"), health2.x+100, health2.y + 70, 150, 180);
-		}
-		
-		
-		switch (p1moveState)
-		{
-			case 0:
-				//surface.image(surface.loadImage("images/" + move1 + ".png"), health1.x, health2.y + 70, 150, 180);
-				break;
-			case 1:
-				
-				
-					surface.image(surface.loadImage("images/"+move1+".png"), health1.x+130, health2.y + 70, 150, 180);
-					try {
-						Thread.sleep(50);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				
-				p1moveState++;
-				break;
-			case 2:
-				
-				surface.image(surface.loadImage("images/"+move1+".png"), health1.x+230, health2.y + 70, 150, 180);
-				try {
-					Thread.sleep(50);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
-				p1moveState++;
-				break;
-			case 3:
-				
-				surface.image(surface.loadImage("images/"+move1+".png"), health1.x+330, health2.y + 70, 150, 180);
-				try {
-					Thread.sleep(50);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
-				p1moveState++;
-				break;
-				
-			case 4:
-				
-				surface.image(surface.loadImage("images/"+move1+".png"), health1.x+430, health2.y + 70, 150, 180);
-				try {
-					Thread.sleep(50);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
-				p1moveState++;
-				break;
-				
-			case 5:
-				
-				surface.image(surface.loadImage("images/"+move1+".png"), health1.x+530, health2.y + 70, 150, 180);
-				try {
-					Thread.sleep(50);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
-				p1moveState = 0;
 
+		if (game.getp1().getProtect()) {
+			surface.image(surface.loadImage("images/protect.png"), health1.x + 100, health2.y + 70, 150, 180);
 		}
-		
-		switch (p2moveState)
-		{
+
+		if (game.getp2().getProtect()) {
+			surface.image(surface.loadImage("images/protect.png"), health2.x + 100, health2.y + 70, 150, 180);
+		}
+
+		switch (p1moveState) {
 		case 0:
-			//surface.image(surface.loadImage("images/" + move1 + ".png"), health1.x, health2.y + 70, 150, 180);
+			// surface.image(surface.loadImage("images/" + move1 + ".png"), health1.x,
+			// health2.y + 70, 150, 180);
 			break;
 		case 1:
-			
-			
-				surface.image(surface.loadImage("images/"+move2+".png"), health2.x-30, health2.y + 70, 150, 180);
-				try {
-					Thread.sleep(50);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			
+
+			surface.image(surface.loadImage("images/" + move1 + ".png"), health1.x + 130, health2.y + 70, 150, 180);
+			try {
+				Thread.sleep(50);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			p1moveState++;
+			break;
+		case 2:
+
+			surface.image(surface.loadImage("images/" + move1 + ".png"), health1.x + 230, health2.y + 70, 150, 180);
+			try {
+				Thread.sleep(50);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			p1moveState++;
+			break;
+		case 3:
+
+			surface.image(surface.loadImage("images/" + move1 + ".png"), health1.x + 330, health2.y + 70, 150, 180);
+			try {
+				Thread.sleep(50);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			p1moveState++;
+			break;
+
+		case 4:
+
+			surface.image(surface.loadImage("images/" + move1 + ".png"), health1.x + 430, health2.y + 70, 150, 180);
+			try {
+				Thread.sleep(50);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			p1moveState++;
+			break;
+
+		case 5:
+
+			surface.image(surface.loadImage("images/" + move1 + ".png"), health1.x + 530, health2.y + 70, 150, 180);
+			try {
+				Thread.sleep(50);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			p1moveState = 0;
+
+		}
+
+		switch (p2moveState) {
+		case 0:
+			// surface.image(surface.loadImage("images/" + move1 + ".png"), health1.x,
+			// health2.y + 70, 150, 180);
+			break;
+		case 1:
+
+			surface.image(surface.loadImage("images/" + move2 + ".png"), health2.x - 30, health2.y + 70, 150, 180);
+			try {
+				Thread.sleep(50);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
 			p2moveState++;
 			break;
 		case 2:
-			
-			surface.image(surface.loadImage("images/"+move2+".png"), health2.x-130, health2.y + 70, 150, 180);
+
+			surface.image(surface.loadImage("images/" + move2 + ".png"), health2.x - 130, health2.y + 70, 150, 180);
 			try {
 				Thread.sleep(50);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 			p2moveState++;
 			break;
 		case 3:
-			
-			surface.image(surface.loadImage("images/"+move2+".png"), health2.x-230, health2.y + 70, 150, 180);
+
+			surface.image(surface.loadImage("images/" + move2 + ".png"), health2.x - 230, health2.y + 70, 150, 180);
 			try {
 				Thread.sleep(50);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 			p2moveState++;
 			break;
-			
+
 		case 4:
-			
-			surface.image(surface.loadImage("images/"+move2+".png"), health2.x-330, health2.y + 70, 150, 180);
+
+			surface.image(surface.loadImage("images/" + move2 + ".png"), health2.x - 330, health2.y + 70, 150, 180);
 			try {
 				Thread.sleep(50);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 			p2moveState++;
 			break;
-			
+
 		case 5:
-			
-			surface.image(surface.loadImage("images/"+move2+".png"), health2.x-430, health2.y + 70, 150, 180);
+
+			surface.image(surface.loadImage("images/" + move2 + ".png"), health2.x - 430, health2.y + 70, 150, 180);
 			try {
 				Thread.sleep(50);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 			p2moveState = 0;
 		}
-		
-		
-		
-		
-		
-		
-		
-		
+
 //		try {
 //			Thread.sleep(100);
 //		} catch (InterruptedException e) {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-		
-		
-		
-		
-	
-		
-		
-		
-		switch (p1shakeState)
-		{
-			case 0:
-				surface.image(surface.loadImage("images/" + player1 + ".png"), health1.x, health2.y + 70, 150, 180);
-				break;
-			case 1:
-				surface.image(surface.loadImage("images/" + player1 + ".png"), health1.x-30, health2.y + 70, 150, 180);
-				try {
-					Thread.sleep(200);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				p1shakeState = 2;
-				break;
-			case 2:
-				surface.image(surface.loadImage("images/" + player1 + ".png"), health1.x+30, health2.y + 70, 150, 180);
-				try {
-					Thread.sleep(200);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				p1shakeState = 0;
-				break;
+
+		switch (p1shakeState) {
+		case 0:
+			surface.image(surface.loadImage("images/" + player1 + ".png"), health1.x, health2.y + 70, 150, 180);
+			break;
+		case 1:
+			surface.image(surface.loadImage("images/" + player1 + ".png"), health1.x - 30, health2.y + 70, 150, 180);
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			p1shakeState = 2;
+			break;
+		case 2:
+			surface.image(surface.loadImage("images/" + player1 + ".png"), health1.x + 30, health2.y + 70, 150, 180);
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			p1shakeState = 0;
+			break;
 		}
-		
-		switch (p2shakeState)
-		{
-			case 0:
-				surface.image(surface.loadImage("images/" + player2 + ".png"), health2.x + 160, health2.y + 70, 150, 180);
-				break;
-			case 1:
-				surface.image(surface.loadImage("images/" + player2 + ".png"), health2.x + 130, health2.y + 70, 150, 180);
-				try {
-					Thread.sleep(200);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				p2shakeState = 2;
-				break;
-			case 2:
-				surface.image(surface.loadImage("images/" + player2 + ".png"), health2.x + 190, health2.y + 70, 150, 180);
-				try {
-					Thread.sleep(200);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				p2shakeState = 0;
-				break;
+
+		switch (p2shakeState) {
+		case 0:
+			surface.image(surface.loadImage("images/" + player2 + ".png"), health2.x + 160, health2.y + 70, 150, 180);
+			break;
+		case 1:
+			surface.image(surface.loadImage("images/" + player2 + ".png"), health2.x + 130, health2.y + 70, 150, 180);
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			p2shakeState = 2;
+			break;
+		case 2:
+			surface.image(surface.loadImage("images/" + player2 + ".png"), health2.x + 190, health2.y + 70, 150, 180);
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			p2shakeState = 0;
+			break;
 		}
 
 		surface.popStyle();
@@ -514,31 +432,27 @@ public class BattleScreen extends Screen {
 
 		}
 
-		
 		for (int i = 0; i < clickState.length; i++) {
 			clickState[i] = false;
 			if (actions[i].contains(p)) {
 				clickState[i] = !clickState[i];
-				
-				if ((game.getTurn()%2 == 0)&&(i == 1)) {
+
+				if ((game.getTurn() % 2 == 0) && (i == 1)) {
 					p2moveState = 1;
-					
-				}
-				
-				else if (i==1){
-					p1moveState = 1; 
 
 				}
-				
+
+				else if (i == 1) {
+					p1moveState = 1;
+
+				}
+
 				game.move(i);
-				
-				
-				if(game.getp1().getHealth()<p1PrevHealth)
-				{
+
+				if (game.getp1().getHealth() < p1PrevHealth) {
 					p1shakeState = 1;
 				}
-				if(game.getp2().getHealth()<p2PrevHealth)
-				{
+				if (game.getp2().getHealth() < p2PrevHealth) {
 					p2shakeState = 1;
 				}
 				p1PrevHealth = game.getp1().getHealth();
