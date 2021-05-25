@@ -261,6 +261,14 @@ public class BattleScreen extends Screen {
 //		}
 		
 		
+		if (game.getp1().getProtect()) {
+			surface.image(surface.loadImage("images/protect.png"), health1.x+100, health2.y + 70, 150, 180);
+		}
+		
+		if (game.getp2().getProtect()) {
+			surface.image(surface.loadImage("images/protect.png"), health2.x+100, health2.y + 70, 150, 180);
+		}
+		
 		
 		switch (p1moveState)
 		{
@@ -418,7 +426,7 @@ public class BattleScreen extends Screen {
 		
 		
 		
-		
+	
 		
 		
 		
